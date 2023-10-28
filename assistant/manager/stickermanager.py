@@ -168,7 +168,7 @@ async def do_magic(ay):
         try:
             pack = await ay.client(GetSticker(InputStickerSetShortName(_), hash=0))
             msg += f"• [{pack.set.title}](https://t.me/addstickers/{_})\n"
-        except StickerSetInvalidError:
+        except StickersetInvalidError:
             if ul.get("anim") and _ in ul["anim"]:
                 ul["anim"].remove(_)
             elif ul.get("vid") and _ in ul["vid"]:
