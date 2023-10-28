@@ -123,7 +123,7 @@ async def play_music_(event):
     if not aySongs.group_call.is_connected:
         if not (await aySongs.vc_joiner()):
             return
-        await aySongs.group_call.join()
+        await aySongs.group_call.join(chat)
         await asyncio.sleep(2)
         await aySongs.group_call.start_audio(song)
         # await aySongs.group_call.reconnect()
