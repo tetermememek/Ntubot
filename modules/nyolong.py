@@ -79,7 +79,7 @@ async def get_restriced_msg(event):
             thumb = await message.download_media(thumb=-1)
         media, _ = await event.client.download_media(
             message.document,
-            show_progress=False,
+            #show_progress=False,
             event=xx,
             message=f"Downloading {message.file.name}...",
         )
