@@ -242,7 +242,7 @@ restart_counter = 0
 )
 @register(incoming=True, from_users=DEVS, pattern=r"^Restart$")
 async def restart(e):
-    ok = await e.eor("`Processing...`")
+    await e.eor("`Processing...`")
     await bash("git pull")
     await e.eor("Done.")
     os.execl(sys.executable, sys.executable, "-m", "Ayra")

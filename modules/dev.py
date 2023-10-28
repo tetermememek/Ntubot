@@ -13,7 +13,6 @@ from io import BytesIO, StringIO
 from os import remove
 from pprint import pprint
 
-from Ayra import _ignore_eval
 from telethon.utils import get_display_name
 
 from . import *
@@ -185,7 +184,7 @@ async def _(event):
             # Consider it as Code Error, and move on to be shown ahead.
             pass
     reply_to_id = event.reply_to_msg_id or event
-    
+
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = StringIO()

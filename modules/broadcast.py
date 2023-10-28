@@ -26,11 +26,9 @@ import asyncio
 
 from Ayra.dB import DEVS
 from Ayra.dB.gcast_blacklist_db import add_gblacklist, list_bl, rem_gblacklist
-from Ayra.fns.tools import create_tl_btn, format_btn, get_msg_button
 from telethon.errors.rpcerrorlist import FloodWaitError
 
 from . import *
-from ._inline import something
 
 
 @ayra_cmd(pattern="[gG][c][a][s][t]( (.*)|$)", fullsudo=False)
@@ -53,7 +51,7 @@ async def gcast(event):
     async for x in event.client.iter_dialogs():
         if x.is_group:
             chat = x.id
-            
+
             if chat not in chat_blacklist and chat not in NOSPAM_CHAT:
                 try:
                     await event.client.send_message(chat, msg)
@@ -61,8 +59,7 @@ async def gcast(event):
                 except FloodWaitError as fw:
                     await asyncio.sleep(fw.seconds + 10)
                     try:
-                        await event.client.send_message(
-                                chat, msg)
+                        await event.client.send_message(chat, msg)
                         done += 1
                     except Exception as rr:
                         err += f"• {rr}\n"
@@ -70,7 +67,9 @@ async def gcast(event):
                 except BaseException as h:
                     err += f"• {str(h)}" + "\n"
                     er += 1
-    await kk.edit(f"**Pesan Broadcast Berhasil Terkirim Ke : {done} Grup, Dan Gagal Terkirim Ke {er} Grup.**")
+    await kk.edit(
+        f"**Pesan Broadcast Berhasil Terkirim Ke : {done} Grup, Dan Gagal Terkirim Ke {er} Grup.**"
+    )
 
 
 @ayra_cmd(pattern="[gG][u][c][a][s][t]( (.*)|$)", fullsudo=False)
@@ -103,7 +102,9 @@ async def gucast(event):
                     done += 1
                 except BaseException:
                     er += 1
-    await kk.edit(f"**Pesan Broadcast Berhasil Terkirim Ke : {done} Pengguna, Dan Gagal Terkirim Ke : {er} Pengguna.**")
+    await kk.edit(
+        f"**Pesan Broadcast Berhasil Terkirim Ke : {done} Pengguna, Dan Gagal Terkirim Ke : {er} Pengguna.**"
+    )
 
 
 @ayra_cmd(pattern="addbl")

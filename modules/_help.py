@@ -6,10 +6,7 @@
 # <https://www.github.com/senpai80/Ayra/blob/main/LICENSE/>.
 
 from Ayra.dB._core import HELP, LIST
-from Ayra.fns.tools import cmd_regex_replace
-from telethon.errors.rpcerrorlist import (BotInlineDisabledError,
-                                          BotMethodInvalidError,
-                                          BotResponseTimeoutError)
+from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.tl.custom import Button
 
 from . import HNDLR, LOGS, asst, ayra_cmd, get_string

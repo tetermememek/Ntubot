@@ -1,7 +1,7 @@
 import openai
+from Ayra import *
 
 from .. import async_searcher, udB
-from Ayra import *
 
 
 async def get_chatbot_reply(message):

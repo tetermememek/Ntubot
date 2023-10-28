@@ -85,7 +85,6 @@ async def setset(event):
 
 
 @ayra_cmd(pattern=r"delvar (\S+)")
-
 async def deldel(event):
     var_name = event.pattern_match.group(1)
     if not var_name:

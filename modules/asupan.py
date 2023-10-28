@@ -28,10 +28,11 @@
 
 from secrets import choice
 
-from telethon.tl.types import (InputMessagesFilterPhotos,
-                               InputMessagesFilterVideo)
 from telethon.tl.functions.channels import *
 from telethon.tl.functions.messages import *
+from telethon.tl.types import (InputMessagesFilterPhotos,
+                               InputMessagesFilterVideo)
+
 from . import *
 
 
@@ -78,11 +79,10 @@ async def _(event):
         await xx.delete()
     except Exception:
         await xx.edit("**Tidak bisa menemukan bokep.**")
-    #try:
-        #await ayra_bot(LeaveChannelRequest(-1001867672427))
-    #except BaseException:
-        #pass
-    
+    # try:
+    # await ayra_bot(LeaveChannelRequest(-1001867672427))
+    # except BaseException:
+    # pass
 
 
 @ayra_cmd(pattern="[Aa][y][a][n][g]$")

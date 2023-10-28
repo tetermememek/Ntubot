@@ -120,9 +120,9 @@ async def _(event):
 @ayra_cmd(pattern=r"dino(?: |$)(.*)")
 async def _(event):
     typew = await eor(event, "`DIN DINNN.....`")
-    #sleep(1)
+    # sleep(1)
     await typew.edit("`DINOOOOSAURUSSSSS!!`")
-    #sleep(1)
+    # sleep(1)
     await typew.edit("`🏃                        🦖`")
     await typew.edit("`🏃                       🦖`")
     await typew.edit("`🏃                      🦖`")

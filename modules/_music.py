@@ -285,11 +285,11 @@ from json import dumps, loads
 from urllib.parse import quote_plus
 
 from requests import get
-from yt_dlp import YoutubeDL
+
 
 def run_sync(func, *args, **kwargs):
     return get_event_loop().run_in_executor(None, partial(func, *args, **kwargs))
-    
+
 
 class YouTubeSearch:
     def __init__(self, search_terms: str, max_results=None):
@@ -369,6 +369,7 @@ class YouTubeSearch:
         if clear_cache:
             self.videos = ""
         return result
+
 
 async def download(query):
     if query.startswith("https://") and "youtube" not in query.lower():
