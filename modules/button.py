@@ -51,7 +51,7 @@ def format_btn(buttons: list):
                 else:
                     txt += f"[{i.button.text} | {i.button.url}]"
     _, btn = get_msg_button(txt)
-    return button
+    return buttons
 
 
 @ayra_cmd(pattern="button")
