@@ -81,7 +81,9 @@ async def get_restriced_msg(event):
             message.document)
         await xx.edit("`Uploading...`")
         uploaded = await event.client.send_file(
-            file=media)
+            event.chat.id,
+            file=media,
+            caption="**Sukses.**")
         typ = not bool(message.video)
         await event.reply(
             file=uploaded,
