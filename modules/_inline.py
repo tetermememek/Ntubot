@@ -59,8 +59,11 @@ async def inline_handler(event):
         len(HELP.get("Official", [])),
         len(z),
     )
+    button = [
+            Button.switch_inline(inline_handler, data="uh_Official_")
+        ]
     result = await event.builder.article(
-        title="Naya Help Menu", text=text, buttons=_main_help_menu
+        title="Naya Help Menu", text=text, buttons=button
     )
     await event.answer([result], private=False, cache_time=300, gallery=False)
 
@@ -115,10 +118,6 @@ _strings = {"Official": helps, "Addons": zhelps, "VCBot": get_string("inline_6")
 @callback(re.compile("uh_(.*)"), owner=False)
 async def help_func(ayra):
     key, count = ayra.data_match.group(1).decode("utf-8").split("_")
-    if key == "VCBot" and HELP.get("VCBot") is None:
-        return await ayra.answer(get_string("help_12"), alert=True)
-    elif key == "Addons" and HELP.get("Addons") is None:
-        return await ayra.answer(get_string("help_13").format(HNDLR), alert=True)
     if "|" in count:
         _, count = count.split("|")
     count = int(count) if count else 0
@@ -249,7 +248,7 @@ async def on_plug_in_callback_query_handler(event):
 
 
 def page_num(index, key):
-    rows = udB.get_key("HELP_ROWS") or 4
+    rows = udB.get_key("HELP_ROWS") or 3
     cols = udB.get_key("HELP_COLUMNS") or 2
     loaded = HELP.get(key, [])
     emoji = udB.get_key("EMOJI_IN_HELP") or ""
@@ -265,7 +264,7 @@ def page_num(index, key):
         new_ = fl_[0] if fl_ else []
         index = 0
     if index == 0 and len(fl_) == 1:
-        new_.append([Button.inline("ᴋᴇᴍʙᴀʟɪ", data="open")])
+        new_.append([Button.inline("Kembali", data="open")])
     else:
         new_.append(
             [
