@@ -36,7 +36,7 @@ async def _(event):
     await event.eor("**Assalamu'alaikum**")
 
 
-@ayra_cmd(pattern="[wW][sS]")
+@ayra_cmd(pattern="ws")
 async def _(event):
     await event.eor("**Wa'alaikumussalam**")
 
