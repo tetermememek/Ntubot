@@ -48,7 +48,7 @@ async def _help(ayra):
             await ayra.eor("Error 🤔 occured.")
     else:
         try:
-            results = await ayra.client.inline_query(asst.me.username, "ayra")
+            results = await ayra.client.inline_query(asst.me.username, "help")
         except BotInlineDisabledError:
             return await ayra.eor(get_string("help_3"))
         await results[0].click(chat.id, reply_to=ayra.reply_to_msg_id)
