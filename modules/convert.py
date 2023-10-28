@@ -47,6 +47,7 @@ import os
 import random
 import time
 
+from Ayra import *
 from PIL import Image
 
 try:
