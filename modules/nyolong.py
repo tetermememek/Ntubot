@@ -81,7 +81,7 @@ async def get_restriced_msg(event):
             message.document,
             #show_progress=False,
             #event=xx,
-            message=f"Downloading {message.file.name}...",
+            #message=f"Downloading {message.file.name}...",
         )
         await xx.edit("`Uploading...`")
         uploaded, _ = await event.client.send_file(
