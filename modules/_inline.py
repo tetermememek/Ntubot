@@ -59,7 +59,7 @@ async def inline_handler(event):
         #len(HELP.get("Official", [])),
         #len(z),
     #)
-    key, count = event.data_match.group(1).decode("utf-8").split("_")
+    key, count = event.pattern_match.group(1).decode("utf-8").split("_")
     if "|" in count:
         _, count = count.split("|")
     count = int(count) if count else 0
