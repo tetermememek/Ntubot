@@ -40,6 +40,7 @@ def create_tl_btn(button: list):
 
 def format_btn(buttons: list):
     txt = ""
+    buttons = []
     for i in buttons:
         a = 0
         for i in i:
