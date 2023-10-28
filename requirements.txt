@@ -37,4 +37,4 @@ python-decouple
 python-dotenv
 #pytgcalls==3.0.0.dev22
 py-Ayra==2.0.9
-tg-music==1.0.0.dev5
+pytgcalls==3.0.0.dev24
