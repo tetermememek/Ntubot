@@ -60,7 +60,7 @@ async def inline_handler(event):
         len(z),
     )
     button = [
-            Button.switch_inline(inline_handler, data="uh_Official_")
+            Button.inline(inline_handler, data="uh_Official_")
         ]
     result = await event.builder.article(
         title="Naya Help Menu", text=text, buttons=button
