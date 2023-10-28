@@ -77,14 +77,14 @@ async def get_restriced_msg(event):
         thumb = None
         if message.document.thumbs:
             thumb = await message.download_media(thumb=-1)
-        media, _ = await event.client.fast_downloader(
+        media, _ = await event.client.download_media(
             message.document,
             show_progress=False,
             event=xx,
             message=f"Downloading {message.file.name}...",
         )
         await xx.edit("`Uploading...`")
-        uploaded, _ = await event.client.fast_uploader(
+        uploaded, _ = await event.client.send_file(
             media.name, event=xx, show_progress=False, to_delete=True
         )
         typ = not bool(message.video)
