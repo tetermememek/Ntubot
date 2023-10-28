@@ -49,7 +49,7 @@ SUP_BUTTONS = [
 # --------------------BUTTONS--------------------#
 
 
-@in_pattern("ayra", owner=False)
+@in_pattern("help", owner=False)
 async def inline_handler(event):
     key = "Official"
     count = 0 
