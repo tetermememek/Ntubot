@@ -49,7 +49,7 @@ SUP_BUTTONS = [
 # --------------------BUTTONS--------------------#
 
 
-@in_pattern("help", owner=False)
+@in_pattern("ayra", owner=False)
 async def inline_handler(event):
     key = "Official"
     count = 0 
@@ -59,7 +59,7 @@ async def inline_handler(event):
         title="alive",
         text=text, 
         buttons=page_num(count, key))
-    await event.answer([result])
+    await event.answer([result], cache_time=0)
 
 
 @in_pattern("pasta", owner=False)
