@@ -83,15 +83,7 @@ async def get_restriced_msg(event):
         uploaded = await event.client.send_file(
             event.chat.id,
             file=media,
-            caption="**Sukses.**")
-        typ = not bool(message.video)
-        await event.reply(
-            file=uploaded,
-            supports_streaming=typ,
-            force_document=typ,
-            thumb=thumb,
-            attributes=message.document.attributes,
-        )
+            caption="**Done.**")
         await xx.delete()
         if thumb:
             os.remove(thumb)
