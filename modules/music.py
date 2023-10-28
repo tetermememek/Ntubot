@@ -60,6 +60,7 @@
 
 import os
 import re
+import asyncio
 
 from Ayra.dB.vc_sudos import *
 from Ayra.fns.helper import *
@@ -122,7 +123,10 @@ async def play_music_(event):
     if not aySongs.group_call.is_connected:
         if not (await aySongs.vc_joiner()):
             return
+        await aySongs.group_call.join()
+        await asyncio.sleep(2)
         await aySongs.group_call.start_audio(song)
+        #await aySongs.group_call.reconnect()
         if isinstance(link, list):
             for lin in link[1:]:
                 add_to_queue(chat, song, lin, lin, None, from_user, duration)
