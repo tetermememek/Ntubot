@@ -48,29 +48,6 @@ SUP_BUTTONS = [
 
 # --------------------BUTTONS--------------------#
 
-"""
-@in_pattern("ayra", owner=False)
-async def inline_handler(event):
-    z = []
-    #for x in LIST.values():
-        #z.extend(x)
-    #text = get_string("inline_4").format(
-        #OWNER_NAME,
-        #len(HELP.get("Official", [])),
-        #len(z),
-    #)
-    key, count = event.data_match.group(1).decode("utf-8").split("_")
-    if "|" in count:
-        _, count = count.split("|")
-    count = int(count) if count else 0
-    text = _strings.get(key, "").format(OWNER_NAME, HNDLR, len(HELP.get(key)))
-    
-    result = await event.builder.article(
-        title="alive",
-        text=text, 
-        buttons=page_num(count, key))
-    await event.answer([result], private=False, cache_time=300, gallery=False)
-"""
 
 @in_pattern("ayra", owner=False)
 async def inline_handler(event):
