@@ -93,7 +93,7 @@ async def speec_(e):
     if not os.path.isdir("/downloads/"):
         os.makedirs("/downloads/")
     file = f"/downloads/{re}"
-    fn = f"{re}.wav"
+    fn = "tes.wav"
     await bash(f'ffmpeg -i "{file}" -vn "{fn}"')
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
