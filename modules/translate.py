@@ -29,7 +29,7 @@ from Ayra.fns.tools import translate
 from . import HNDLR, LOGS, ayra_cmd, eor
 
 
-@ayra_cmd(pattern=r"^[tT][rR](?: |$)(.*)", manager=False)
+@ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
 async def _(event):
     input = event.pattern_match.group(1).strip().split(maxsplit=1)
     txt = input[1] if len(input) > 1 else None
