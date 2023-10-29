@@ -90,8 +90,11 @@ async def speec_(e):
         return await eod(e, "`Balas ke Audio-File..`")
     # Not Hard Checking File Types
     re = await reply.download_media()
+    if not os.path.isdir("/downloads/"):
+        os.makedirs("/downloads/")
+    file = f"/downloads/{re}.mp3"
     fn = f"{re}.mp3"
-    await bash(f'ffmpeg -i "{re}" -vn "{fn}"')
+    await bash(f'ffmpeg -i "{file}" -vn "{fn}"')
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
     try:
