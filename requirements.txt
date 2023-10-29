@@ -40,3 +40,4 @@ pytgcalls==3.0.0.dev24
 emoji
 gpytranslate
 Markdown
+ffmpeg-python
