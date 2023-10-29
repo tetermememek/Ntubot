@@ -17,6 +17,7 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 
 from . import HNDLR, LOGS, ayra_cmd, eor
 from ._trans import *
+from gpytranslate import Translator
 
 @ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
 async def _(jink):
@@ -39,14 +40,6 @@ async def _(jink):
     if not kata:
         await jink.eor("`Reply to text message or provide a text!`", time=5)
         return
-    yy = await jink.eor("`...`")
-    try:
-        from gpytranslate import Translator
-    except ImportError:
-        Translator = import_lib(
-            lib_name="gpytranslate",
-            pkg_name="gpytranslate==1.5.1",
-        ).Translator
     try:
         text = strip_format(strip_emoji(kata))
         translator = Translator()
@@ -56,6 +49,6 @@ async def _(jink):
             await translator.detect(translation.text),
             translation.text,
         )
-        await yy.eor(tr)
+        await jink.eor(tr)
     except Exception as err:
-        await yy.eor(f"Error {err}")
+        await jink.eor(f"Error {err}")
