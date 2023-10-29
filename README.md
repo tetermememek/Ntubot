@@ -126,7 +126,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 * [Kynan](https://github.com/naya1503) for [Naya-Userbot](https://github.com/naya1503/Naya-Userbot)
 
 ## Maintained By
-* [![Kynan.](https://img.shields.io/static/v1?label=Ky-nan&message=M&color=critical)](https://t.me/kenapanan)
+* [![Kynan.](https://img.shields.io/static/v1?label=Ky&message=nan&color=critical)](https://t.me/kenapanan)
 
 
 
