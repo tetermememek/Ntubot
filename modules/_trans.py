@@ -5,6 +5,7 @@ import typing
 from contextlib import suppress
 from emoji import replace_emoji
 from string import ascii_letters, ascii_uppercase, ascii_lowercase
+from markdown.core import markdown
 from bs4 import BeautifulSoup
 
 
