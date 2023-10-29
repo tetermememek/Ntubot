@@ -15,9 +15,11 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-from . import HNDLR, LOGS, ayra_cmd, eor
-from ._trans import *
 from gpytranslate import Translator
+
+from . import ayra_cmd
+from ._trans import *
+
 
 @ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
 async def _(jink):
