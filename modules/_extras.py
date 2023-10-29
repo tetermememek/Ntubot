@@ -113,7 +113,7 @@ async def DummyHandler(bjir):
                 )
             if wel.get("button"):
                 btn = create_tl_btn(wel["button"])
-                await something(ult, msg, med, btn)
+                await something(bjir, msg, med, btn)
             elif msg:
                 send = await bjir.reply(
                     msg,
@@ -153,7 +153,7 @@ async def DummyHandler(bjir):
             )
         if wel.get("button"):
             btn = create_tl_btn(wel["button"])
-            await something(ult, msg, med, btn)
+            await something(bjir, msg, med, btn)
         elif msg:
             send = await bjir.reply(
                 msg,
