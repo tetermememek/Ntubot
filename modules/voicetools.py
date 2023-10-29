@@ -45,9 +45,9 @@ async def _(event):
         return
     text = text.strip()
     lan = lan.strip()
-    if not os.path.isdir("downloads/"):
-        os.makedirs("downloads/")
-    required_file_name = "downloads/voice.ogg"
+    if not os.path.isdir("/downloads/"):
+        os.makedirs("/downloads/")
+    required_file_name = "/downloads/voice.mp3"
     try:
         tts = gTTS(text, lang=lan)
         tts.save(required_file_name)
@@ -90,7 +90,7 @@ async def speec_(e):
         return await eod(e, "`Balas ke Audio-File..`")
     # Not Hard Checking File Types
     re = await reply.download_media()
-    fn = f"{re}.wav"
+    fn = f"{re}.mp3"
     await bash(f'ffmpeg -i "{re}" -vn "{fn}"')
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
