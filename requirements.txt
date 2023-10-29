@@ -38,3 +38,4 @@ python-dotenv
 py-Ayra==2.0.9
 pytgcalls==3.0.0.dev24
 emoji
+gpytranslate
