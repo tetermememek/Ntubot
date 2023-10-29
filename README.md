@@ -48,7 +48,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 
 <details>
-<summary><b>🔗 Deploy di VPS</b></summary>
+<summary><b>🔗 Deploy Via Screen</b></summary>
 <br>
 
  • `git clone https://github.com/naya1503/Naya-Userbot`
@@ -104,17 +104,32 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
 
 
+#### Special Thanks To
+* [Everyone](https://github.com/mrismanaziz/Man-Userbot/graphs/contributors) Who Has Helped Make This Userbot Awesome!
+* [AdekMaulana](https://github.com/adekmaulana) : ProjectBish
+* [RaphielGang](https://github.com/RaphielGang) : Paperplane
+* [TeamUltroid](https://github.com/TeamUltroid/Ultroid) :  UltroidUserbot
+* [BianSepang](https://github.com/BianSepang/WeebProject) : WeebProject
+* [Sandy1709](https://github.com/sandy1709/catuserbot) : CatUserbot
+* [X_ImFine](https://github.com/ximfine) :  XBot-REMIX
+* [Risman](https://github.com/mrismanaziz/Man-Userbot) :  Man-Userbot
+* [Koala](https://github.com/ManusiaRakitan/Kampang-Bot) : Kampang-Bot
+* [Alvin](https://github.com/Zora24/Lord-Userbot) : Lord-Userbot
+* [AyiinXd](https://github.com/AyiinXd/Ayiin-Userbot) : Ayiin-Userbot
+
+## © Credits
+* [TeamUltroid](https://github.com/TeamUltroid) for [Ultroid](https://github.com/TeamUltroid/Ultroid)
+* [Lonami](https://github.com/LonamiWebs/) for [Telethon](https://github.com/LonamiWebs/Telethon)
+* [MarshalX](https://github.com/MarshalX) for [PyTgCalls](https://github.com/MarshalX/tgcalls)
+* [Risman](https://github.com/mrismanaziz) for [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot
+* [AyiinXd](https://github.com/AyiinXd) for [Ayiin-Userbot](https://github.com/AyiinXd/Ayiin-Userbot)
+* [Kynan](https://github.com/naya1503) for [Naya-Userbot](https://github.com/naya1503/Naya-Userbot)
+
+## Maintained By
+* [![Kynan.](https://img.shields.io/static/v1?label=Ky-nan&message=M&color=critical)](https://t.me/kenapanan)
+
+
 
 # License
 [![License](https://www.gnu.org/graphics/agplv3-155x51.png)](LICENSE)   
 Naya-Userbot is licensed under [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) v3 or later.
-
----
-
-## © Credits
-* [![TeamUltroid-Devs](https://img.shields.io/static/v1?label=Teamultroid&message=devs&color=critical)](https://t.me/UltroidDevs)
-* [Lonami](https://github.com/LonamiWebs/) for [Telethon.](https://github.com/LonamiWebs/Telethon)
-* [MarshalX](https://github.com/MarshalX) for [PyTgCalls.](https://github.com/MarshalX/tgcalls)
-
-> Recode By
-* [![Rizky Ananda M.](https://img.shields.io/static/v1?label=Rizky-Ananda&message=M&color=critical)](https://t.me/rizzvbss)
