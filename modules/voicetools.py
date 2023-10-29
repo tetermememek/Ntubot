@@ -92,8 +92,8 @@ async def speec_(e):
     re = await reply.download_media()
     if not os.path.isdir("/downloads/"):
         os.makedirs("/downloads/")
-    file = f"/downloads/{re}.mp3"
-    fn = f"{re}.mp3"
+    file = f"/downloads/{re}"
+    fn = f"{re}"
     await bash(f'ffmpeg -i "{file}" -vn "{fn}"')
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
