@@ -2,6 +2,7 @@
 import re
 import subprocess
 import typing
+from functools import reduce
 from contextlib import suppress
 from emoji import replace_emoji
 from string import ascii_letters, ascii_uppercase, ascii_lowercase
