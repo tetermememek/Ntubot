@@ -26,35 +26,22 @@ BAHASA = ["id", "en"]
 
 
 @ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
-async def _(jink):
-    match = jink.pattern_match.group(1)
-    itu = match.split(" ")
-    if itu[0] in BAHASA:
-        is_lang, lang = True, itu[0]
-    else:
-        is_lang, lang = False, BAHASA
+async def lu_pro(jink):
+    trans = Translator()
+    dest = "id"
     if jink.is_reply:
-        kata = (await jink.get_reply_message()).message
-        if is_lang:
-            with suppress(BaseException):
-                kata = match.split(maxsplit=1)[1]
+        teks = await jink.get_reply_message()
+        hasil = await trans.detect(teks)
     else:
-        kata = match
-        if is_lang:
-            with suppress(BaseException):
-                kata = match.split(maxsplit=1)[1]
-    if not kata:
-        await jink.eor("`Reply to text message or provide a text!`", time=5)
-        return
-    try:
-        text = strip_format(strip_emoji(kata))
-        translator = Translator()
-        translation = await translator(text, targetlang=lang)
-        tr = "**Detected:** `{}`\n**Translated:** `{}`\n\n```{}```".format(
-            await translator.detect(translation.orig),
-            await translator.detect(translation.text),
-            translation.text,
-        )
-        await jink.eor(tr)
-    except Exception as err:
-        await jink.eor(f"Error {err}")
+        kntl = jink.pattern_match.group(1).split(None, 1)
+        if len(kntl) == 2:
+            dest = kntl[0]
+            teks = kntl[1]
+            hasil = await trans.detect(teks)
+        else:
+            return
+    
+    translation = trans.translate(teks, src=hasil.lang, dest=dest)
+    mmk = f"<b>Bahasa {hasil} Ke Bahasa {dest}</b>:\n<code>{teks}</code>"
+    
+    await jink.reply(mmk)
