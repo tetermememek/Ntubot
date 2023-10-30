@@ -1,4 +1,3 @@
-
 # Ultroid - UserBot
 # Copyright (C) 2021-2023 TeamUltroid
 #
