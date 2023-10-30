@@ -93,7 +93,7 @@ async def speec_(e):
     tempat = "/downloads/"
     if not os.path.isdir(tempat):
         os.makedirs(tempat)
-    file = os.path.join(tempat, "voice.wav")
+    file = os.path.join(tempat, f"{re}")
     await bash(f'ffmpeg -i "{re}" -vn "{file}"')
     with sr.AudioFile(file) as source:
         audio = reco.record(source)
