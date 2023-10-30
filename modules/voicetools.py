@@ -90,11 +90,11 @@ async def speec_(e):
         return await eod(e, "`Balas ke Audio-File..`")
     # Not Hard Checking File Types
     re = await reply.download_media()
-    if not os.path.isdir("/downloads/"):
-        os.makedirs("/downloads/")
-    file = f"/downloads/{re}"
-    fn = "tes.wav"
-    await bash(f'ffmpeg -i "{file}" -vn "{fn}"')
+    tempat = "/downloads/"
+    if not os.path.isdir(tempat):
+        os.makedirs(tempat)
+    file = os.path.join(tempat, "voice.wav")
+    await bash(f'ffmpeg -i "{re}" -vn "{file}"')
     with sr.AudioFile(fn) as source:
         audio = reco.record(source)
     try:
@@ -103,5 +103,5 @@ async def speec_(e):
         return await e.eor(str(er))
     out = "**Extracted Text :**\n `" + text + "`"
     await e.eor(out)
-    os.remove(fn)
+    os.remove(file)
     os.remove(re)
