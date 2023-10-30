@@ -95,7 +95,7 @@ async def speec_(e):
         os.makedirs(tempat)
     file = os.path.join(tempat, "voice.wav")
     await bash(f'ffmpeg -i "{re}" -vn "{file}"')
-    with sr.AudioFile(fn) as source:
+    with sr.AudioFile(file) as source:
         audio = reco.record(source)
     try:
         text = reco.recognize_google(audio, language="id-ID")
