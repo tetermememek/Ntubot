@@ -20,15 +20,16 @@ from gpytranslate import Translator
 from . import ayra_cmd
 from ._trans import *
 
+BAHASA = ["id", "en"]
 
 @ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
 async def _(jink):
     match = jink.pattern_match.group(1)
     itu = match.split(" ")
-    if itu[0] == "id":
+    if itu[0] in BAHASA:
         is_lang, lang = True, itu[0]
     else:
-        is_lang, lang = False, "id"
+        is_lang, lang = False, BAHASA
     if jink.is_reply:
         kata = (await jink.get_reply_message()).message
         if is_lang:
