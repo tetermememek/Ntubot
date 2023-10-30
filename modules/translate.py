@@ -15,11 +15,13 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
+from contextlib import suppress
+
 from gpytranslate import Translator
 
 from . import ayra_cmd
 from ._trans import *
-from contextlib import suppress
+
 BAHASA = ["id", "en"]
 
 
