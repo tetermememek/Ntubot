@@ -22,6 +22,7 @@ from ._trans import *
 
 BAHASA = ["id", "en"]
 
+
 @ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
 async def _(jink):
     match = jink.pattern_match.group(1)
