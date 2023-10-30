@@ -91,7 +91,7 @@ async def speec_(e):
     # Not Hard Checking File Types
     re = await reply.download_media()
     file = "voice.wav"
-    open(file, 'w').close()
+    open(file, "w").close()
     await bash(f'ffmpeg -i "{re}" -vn "{file}"')
     with sr.AudioFile(file) as source:
         audio = reco.record(source)
