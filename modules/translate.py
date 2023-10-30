@@ -15,12 +15,10 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-from contextlib import suppress
 
 from gpytranslate import Translator
 
 from . import ayra_cmd
-from ._trans import *
 
 BAHASA = ["id", "en"]
 
@@ -40,8 +38,8 @@ async def lu_pro(jink):
             hasil = await trans.detect(teks)
         else:
             return
-    
+
     translation = trans.translate(teks, src=hasil.lang, dest=dest)
     mmk = f"<b>Bahasa {hasil} Ke Bahasa {dest}</b>:\n<code>{teks}</code>"
-    
+
     await jink.reply(mmk)
