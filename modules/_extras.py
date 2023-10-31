@@ -8,13 +8,11 @@
 import asyncio
 
 from Ayra.dB import stickers
-from Ayra.dB.echo_db import check_echo
 from Ayra.dB.forcesub_db import get_forcesetting
 from Ayra.dB.gban_mute_db import is_gbanned
 from Ayra.dB.greetings_db import get_goodbye, get_welcome, must_thank
-from Ayra.dB.nsfw_db import is_profan
 from Ayra.fns.helper import inline_mention
-from Ayra.fns.tools import create_tl_btn, get_chatbot_reply
+from Ayra.fns.tools import create_tl_btn
 from telethon import events
 from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
@@ -169,6 +167,7 @@ async def DummyHandler(bjir):
         else:
             await bjir.reply(file=med)
 
+
 """
 @ayra_bot.on(events.NewMessage(incoming=True))
 async def chatBot_replies(e):
@@ -197,6 +196,7 @@ async def chatBot_replies(e):
         if y:
             await e.delete()
 """
+
 
 @ayra_bot.on(events.Raw(types.UpdateUserName))
 async def uname_change(e):
