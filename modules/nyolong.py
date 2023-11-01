@@ -63,7 +63,7 @@ async def get_restriced_msg(event):
         media = await event.client.download_media(message.document)
         await xx.edit("`Uploading...`")
         uploaded = await event.client.send_file(
-            event.chat, file=media, caption="**Done.**"
+            event.chat_id, file=media, caption="**Done.**"
         )
         await xx.delete()
         if thumb:
