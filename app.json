@@ -22,6 +22,10 @@
             "description": "Silakan isi Telethon Atau Pyrogram V2",
             "value": ""
         },
+        "MONGO_URI": {
+            "description": "Silakan isi Mongo Db/Mongo Url",
+            "value": ""
+        },
         "HEROKU_API": {
             "description": "Isi Coy Jan Dikosongin.",
             "required": true
@@ -32,15 +36,6 @@
             "required": true
         }
     },
-  "addons": [
-    {
-      "plan": "rediscloud",
-      "options": {
-        "maxmemory-policy": "allkeys-lru",
-        "maxmemory-redis": "2GB"
-      }
-    }
-  ],
   "buildpacks": [
     {
       "url": "heroku/python"
