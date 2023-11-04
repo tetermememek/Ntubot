@@ -23,7 +23,7 @@
             "value": ""
         },
         "MONGO_URI": {
-            "description": "Silakan isi Mongo Db/Mongo Url",
+            "description": "Silakan isi Mongo Db/Mongo Url . Cara ambil nya ketik #tutor di @kynansupport.",
             "value": ""
         },
         "HEROKU_API": {
