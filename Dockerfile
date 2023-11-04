@@ -1,6 +1,8 @@
 ######## Kynan #######
 
-FROM kynan1503/naya-userbot:main
+#FROM kynan1503/naya-userbot:main
+
+FROM python:3.10
 
 COPY installer.sh .
 
