@@ -19,6 +19,7 @@ mediainfo
 lottie
 lxml
 numpy>=1.21.2
+pymediainfo
 oauth2client
 opencv-python-headless
 pillow==8.3.2
