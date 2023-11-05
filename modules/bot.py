@@ -79,12 +79,12 @@ async def kynanabsen(ganteng):
     await ganteng.reply(choice(absen))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^Kynan")
+@register(incoming=True, from_users=DEVS, pattern=r"^Kynan$")
 async def naya(naya):
     await naya.reply("**Kynan Punya Nya Naya**🤩")
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^Naya")
+@register(incoming=True, from_users=DEVS, pattern=r"^Naya$")
 async def naya(naya):
     await naya.reply("**Naya Punya Nya Kynan**🤩")
 
@@ -190,7 +190,7 @@ async def lol(
     )
 
 
-@ayra_cmd(pattern="ping$", chats=[], type=["official", "assistant"])
+@ayra_cmd(pattern="^[Pp][Ii][Nn][Gg]$", chats=[], type=["official", "assistant"])
 @register(incoming=True, from_users=DEVS, pattern=r"^Cping$")
 async def _(event):
     start = time.time()
@@ -237,7 +237,7 @@ restart_counter = 0
 
 
 @ayra_cmd(
-    pattern="restart$",
+    pattern="^[rR][Ee][Ss][Tt][Aa][Rr][Tt]$",
     fullsudo=False,
 )
 @register(incoming=True, from_users=DEVS, pattern=r"^Restart$")
@@ -249,7 +249,7 @@ async def restart(e):
 
 
 @ayra_cmd(
-    pattern="(s|S)hutdown$",
+    pattern="^[sS][Hh][Uu][Tt][Dd][Oo][Ww][Nn]$",
     fullsudo=False,
 )
 async def shutdownbot(ayra):
@@ -257,7 +257,7 @@ async def shutdownbot(ayra):
 
 
 @ayra_cmd(
-    pattern="(l|L)ogs( (.*)|$)",
+    pattern="^[lL][Oo][Gg][Ss]( (.*)|$)",
     chats=[],
 )
 async def _(event):
