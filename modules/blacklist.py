@@ -27,28 +27,28 @@ from . import ayra_bot, ayra_cmd, events, get_string, udB
 
 @ayra_cmd(pattern="^[Bb][l][a][c][k]( (.*)|$)", admins_only=True)
 async def af(e):
-    wrd = e.pattern_match.group(1).strip()
+    if xx := event.pattern_match.group(1):
+        wrd = xx
+    elif event.is_reply:
+        wrd = await event.get_reply_message()
     chat = e.chat_id
-    if not (wrd):
+    if not wrd:
         return await e.eor(get_string("blk_1"), time=5)
-    wrd = e.text[11:]
-    heh = wrd.split(" ")
-    for z in heh:
-        add_blacklist(int(chat), z.lower())
+    add_blacklist(int(chat), wrd)
     ayra_bot.add_handler(blacklist, events.NewMessage(incoming=True))
     await e.eor(get_string("blk_2").format(wrd))
 
 
 @ayra_cmd(pattern="^[Ww][h][i][t][e]( (.*)|$)", admins_only=True)
 async def rf(e):
-    wrd = e.pattern_match.group(1).strip()
+    if xx := event.pattern_match.group(1):
+        wrd = xx
+    elif event.is_reply:
+        wrd = await event.get_reply_message()
     chat = e.chat_id
     if not wrd:
         return await e.eor(get_string("blk_3"), time=5)
-    wrd = e.text[14:]
-    heh = wrd.split(" ")
-    for z in heh:
-        rem_blacklist(int(chat), z.lower())
+    rem_blacklist(int(chat), wrd)
     await e.eor(get_string("blk_4").format(wrd))
 
 
