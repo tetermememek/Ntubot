@@ -23,26 +23,15 @@ async def _help(ayra):
     plug = ayra.pattern_match.group(1).strip()
     chat = await ayra.get_chat()
     if plug:
-        try:
-            if plug in HELP["Official"]:
-                output = f"**Plugin** - `{plug}`\n"
-                for i in HELP["Official"][plug]:
-                    output += i
-                output += "\n© @KynanSupport"
-                await ayra.eor(output)
-            else:
-                try:
-                    x = get_string("help_11").format(plug)
-                    for d in LIST[plug]:
-                        x += HNDLR + d
-                        x += "\n"
+            try:
+                x = get_string("help_11").format(plug)
+                for d in LIST[plug]:
+                    x += HNDLR + d
+                    x += "\n"
                     x += "\n© @KynanSupport"
                     await ayra.eor(x)
-                except BaseException as e:
+            except BaseException as e:
                     await ayra.eor(f"{e}")
-        except BaseException as er:
-            LOGS.exception(er)
-            await ayra.eor("Error 🤔 occured.")
     else:
         try:
             results = await ayra.client.inline_query(asst.me.username, "help")
