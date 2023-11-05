@@ -21,7 +21,7 @@ buddhhu = {}
 
 
 @ayra_cmd(
-    pattern="wspr( (.*)|$)",
+    pattern="^[wW][sS][pP][Rr]( (.*)|$)",
 )
 async def _(e):
     if e.reply_to_msg_id:
