@@ -26,7 +26,7 @@ from . import (LOG_CHANNEL, NOSPAM_CHAT, Redis, asst, ayra_bot, ayra_cmd,
 old_afk_msg = []
 
 
-@ayra_cmd(pattern="afk( (.*)|$)", owner_only=True)
+@ayra_cmd(pattern="^[Aa][Ff][Kk]( (.*)|$)", owner_only=True)
 async def set_afk(event):
     if event.client._bot or is_afk():
         return
