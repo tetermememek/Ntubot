@@ -26,7 +26,7 @@ AYSTRING = """🎇 **Thanks for Deploying Naya-Userbot**
 • Here, are the Some Basic stuff from, where you can Know, about its Usage."""
 
 
-@ayra_cmd(pattern="repo")
+@ayra_cmd(pattern="Repo$")
 async def useAyra(rs):
     button = Button.inline("Start >>", "initft_2")
     msg = await asst.send_message(
