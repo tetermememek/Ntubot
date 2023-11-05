@@ -278,7 +278,9 @@ async def unp(ayra):
     await xx.edit("`Pesan Berhasil Dihapus Dari Sematan !`")
 
 
-@ayra_cmd(pattern="^[Pp][Uu][Rr][Gg][Ee]( (.*)|$)", manager=True, require="delete_messages")
+@ayra_cmd(
+    pattern="^[Pp][Uu][Rr][Gg][Ee]( (.*)|$)", manager=True, require="delete_messages"
+)
 async def fastpurger(purg):
     match = purg.pattern_match.group(1).strip()
     try:
