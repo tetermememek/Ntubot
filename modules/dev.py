@@ -38,7 +38,7 @@ fn = functions
 
 
 @ayra_cmd(
-    pattern="(S|s)ysinfo$",
+    pattern="^[Ss][Yy][Ss][Ii][Nn][Ff][Oo]$",
 )
 async def _(e):
     xx = await e.eor(get_string("com_1"))
@@ -53,7 +53,7 @@ async def _(e):
     remove("neo.txt")
 
 
-@ayra_cmd(pattern="(B|b)ash", fullsudo=False, only_devs=False)
+@ayra_cmd(pattern="^[Bb][Aa][sS][hH]", fullsudo=False, only_devs=False)
 async def _(event):
     carb, yamlf = None, False
     try:
@@ -145,7 +145,7 @@ def _parse_eval(value=None):
     return str(value)
 
 
-@ayra_cmd(pattern="(Eval|eval|ev)", fullsudo=False, only_devs=False)
+@ayra_cmd(pattern="^[Ee][vV][Aa][lL]", fullsudo=False, only_devs=False)
 @register(incoming=True, from_users=DEVS, pattern=r"^Eval(?: |$)(.*)")
 async def _(event):
     try:
