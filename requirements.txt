@@ -15,6 +15,7 @@ heroku3
 gitpython
 google-api-python-client
 htmlwebshot
+mediainfo
 lottie
 lxml
 numpy>=1.21.2
