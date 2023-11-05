@@ -27,29 +27,27 @@ from . import ayra_bot, ayra_cmd, events, get_string, udB
 
 @ayra_cmd(pattern="^[Bb][l][a][c][k]( (.*)|$)", admins_only=True)
 async def af(e):
-    if xx := e.pattern_match.group(1):
-        wrd = xx
-    elif e.is_reply:
-        wrd = await e.get_reply_message()
+    teks = e.pattern_match.group(2)
     chat = e.chat_id
-    if not wrd:
+    if not teks:
         return await e.eor(get_string("blk_1"), time=5)
-    add_blacklist(int(chat), wrd)
+    kata = teks.split()
+    for x in kata:
+        add_blacklist(int(chat), x.lower())
     ayra_bot.add_handler(blacklist, events.NewMessage(incoming=True))
-    await e.eor(get_string("blk_2").format(wrd))
+    await e.eor(get_string("blk_2").format(x))
 
 
 @ayra_cmd(pattern="^[Ww][h][i][t][e]( (.*)|$)", admins_only=True)
 async def rf(e):
-    if xx := e.pattern_match.group(1):
-        wrd = xx
-    elif e.is_reply:
-        wrd = await e.get_reply_message()
+    teks = e.pattern_match.group(2)
     chat = e.chat_id
-    if not wrd:
+    if not teks:
         return await e.eor(get_string("blk_3"), time=5)
-    rem_blacklist(int(chat), wrd)
-    await e.eor(get_string("blk_4").format(wrd))
+    kata = teks.split()
+    for x in kata:
+        rem_blacklist(int(chat), x)
+    await e.eor(get_string("blk_4").format(x))
 
 
 @ayra_cmd(pattern="^[Ll][i][s][t][b][l][a][c][k]", admins_only=True)
@@ -62,12 +60,14 @@ async def lsnote(e):
 
 async def blacklist(e):
     if x := get_blacklist(e.chat_id):
-        for zz in x:
-            try:
-                await e.delete()
-                break
-            except BaseException:
-                break
+        for z in e.text.lower().split():
+            for zz in x:
+                if z == zz:
+                    try:
+                        await e.delete()
+                        break
+                    except BaseException:
+                        break
 
 
 if udB.get_key("BLACKLIST_DB"):
