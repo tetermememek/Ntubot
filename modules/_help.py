@@ -5,11 +5,11 @@
 # PLease read the GNU Affero General Public License in
 # <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
 
-from Ayra.dB._core import HELP, LIST
+from Ayra.dB._core import LIST
 from telethon.errors.rpcerrorlist import BotInlineDisabledError
 from telethon.tl.custom import Button
 
-from . import HNDLR, LOGS, asst, ayra_cmd, get_string
+from . import HNDLR, asst, ayra_cmd, get_string
 
 _main_help_menu = [
     [
@@ -23,15 +23,15 @@ async def _help(ayra):
     plug = ayra.pattern_match.group(1).strip()
     chat = await ayra.get_chat()
     if plug:
-            try:
-                x = get_string("help_11").format(plug)
-                for d in LIST[plug]:
-                    x += HNDLR + d
-                    x += "\n"
-                    x += "\n© @KynanSupport"
-                    await ayra.eor(x)
-            except BaseException as e:
-                    await ayra.eor(f"{e}")
+        try:
+            x = get_string("help_11").format(plug)
+            for d in LIST[plug]:
+                x += HNDLR + d
+                x += "\n"
+                x += "\n© @KynanSupport"
+                await ayra.eor(x)
+        except BaseException as e:
+            await ayra.eor(f"{e}")
     else:
         try:
             results = await ayra.client.inline_query(asst.me.username, "help")
