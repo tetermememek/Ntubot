@@ -27,7 +27,8 @@ from . import ayra_bot, ayra_cmd, events, get_string, udB
 
 @ayra_cmd(pattern="^[Bb][l][a][c][k]( (.*)|$)", admins_only=True)
 async def af(e):
-    teks = e.pattern_match.group(2)
+    direp = await e.get_reply_message()
+    teks = direp.text if direp else e.pattern_match.group(3)
     chat = e.chat_id
     if not teks:
         return await e.eor(get_string("blk_1"), time=5)
