@@ -27,10 +27,10 @@ from . import ayra_bot, ayra_cmd, events, get_string, udB
 
 @ayra_cmd(pattern="^[Bb][l][a][c][k]( (.*)|$)", admins_only=True)
 async def af(e):
-    if xx := event.pattern_match.group(1):
+    if xx := e.pattern_match.group(1):
         wrd = xx
-    elif event.is_reply:
-        wrd = await event.get_reply_message()
+    elif e.is_reply:
+        wrd = await e.get_reply_message()
     chat = e.chat_id
     if not wrd:
         return await e.eor(get_string("blk_1"), time=5)
@@ -41,10 +41,10 @@ async def af(e):
 
 @ayra_cmd(pattern="^[Ww][h][i][t][e]( (.*)|$)", admins_only=True)
 async def rf(e):
-    if xx := event.pattern_match.group(1):
+    if xx := e.pattern_match.group(1):
         wrd = xx
-    elif event.is_reply:
-        wrd = await event.get_reply_message()
+    elif e.is_reply:
+        wrd = await e.get_reply_message()
     chat = e.chat_id
     if not wrd:
         return await e.eor(get_string("blk_3"), time=5)
