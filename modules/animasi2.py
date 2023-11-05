@@ -26,7 +26,6 @@
 import asyncio
 from time import sleep
 
-from telethon import events
 
 from . import *
 
