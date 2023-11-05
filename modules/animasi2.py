@@ -31,7 +31,7 @@ from telethon import events
 from . import *
 
 
-@ayra_cmd(pattern="hua$")
+@ayra_cmd(pattern="^[Hh][Uu][Aa]$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("أ‿أ")
@@ -66,7 +66,7 @@ async def koc(e):
         await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
-@ayra_cmd(pattern="huh(?: |$)(.*)")
+@ayra_cmd(pattern="^[Hh][Uu][Hh](?: |$)(.*)")
 async def _(event):
     aa = await eor(event, "`\n(\\_/)`" "`\n(●_●)`" "`\n />❤️ **Ini Buat Kamu**`")
     sleep(3)
@@ -75,13 +75,9 @@ async def _(event):
     await aa.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💔<\\  **Terimakasih**`")
 
 
-@ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
+@ayra_cmd(pattern=r"^[Cc][Ee][Rr][Ii][Tt][Aa][Cc][Ii][Nn][Tt][Aa]$")
 async def _(event):
-    if event.fwd_from:
-        return
-
     input_str = event.pattern_match.group(1)
-
     if input_str == "ceritacinta":
         await event.edit(input_str)
 
@@ -112,11 +108,8 @@ async def _(event):
             await event.edit(animation_chars[i % 103])
 
 
-@ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
+@ayra_cmd(pattern=r"^[Cc][aA][nN][dD][Aa]$")
 async def _(event):
-    if event.fwd_from:
-        return
-
     input_str = event.pattern_match.group(1)
 
     if input_str == "canda":
@@ -141,18 +134,15 @@ async def _(event):
             await event.edit(animation_chars[i % 11])
 
 
-@ayra_cmd(pattern="nah(?: |$)(.*)")
+@ayra_cmd(pattern="^[Nn][Aa][Hh]$")
 async def _(ayiin):
     await ayiin.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n />💖 *Ini Buat Kamu`")
     sleep(2)
     await ayiin.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💖<\\  *Tapi Bo'ong Hiyahiyahiya`")
 
 
-@ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
+@ayra_cmd(pattern="^[oO][wW][nN][eE][rR]$")
 async def _(event):
-    if event.fwd_from:
-        return
-
     input_str = event.pattern_match.group(1)
 
     if input_str == "owner":
