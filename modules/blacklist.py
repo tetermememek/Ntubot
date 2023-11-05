@@ -8,13 +8,13 @@
 """
 ✘ **Bantuan Untuk Blacklist**
 
-๏ **Perintah:** `black` <kata>
+๏ **Perintah:** `bl` <kata>
 ◉ **Keterangan:** Daftar hitam kan kata didalam grup.
 
-๏ **Perintah:** `white` <kata>
+๏ **Perintah:** `wl` <kata>
 ◉ **Keterangan:** Hapus kata dari daftar hitam.
 
-๏ **Perintah:** `listblack`
+๏ **Perintah:** `listbl`
 ◉ **Keterangan:** Lihat Semua Daftar Kata Terlarang .
 """
 
@@ -25,7 +25,7 @@ from Ayra.dB.blacklist_db import (add_blacklist, get_blacklist, list_blacklist,
 from . import ayra_bot, ayra_cmd, events, get_string, udB
 
 
-@ayra_cmd(pattern="^[Bb][l][a][c][k]( (.*)|$)", admins_only=True)
+@ayra_cmd(pattern="^[Bb][l]( (.*)|$)", admins_only=True)
 async def af(e):
     direp = await e.get_reply_message()
     teks = direp.text if direp else e.pattern_match.group(3)
@@ -39,7 +39,7 @@ async def af(e):
     await e.eor(get_string("blk_2").format(x))
 
 
-@ayra_cmd(pattern="^[Ww][h][i][t][e]( (.*)|$)", admins_only=True)
+@ayra_cmd(pattern="^[Ww][l]( (.*)|$)", admins_only=True)
 async def rf(e):
     teks = e.pattern_match.group(2)
     chat = e.chat_id
@@ -51,7 +51,7 @@ async def rf(e):
     await e.eor(get_string("blk_4").format(x))
 
 
-@ayra_cmd(pattern="^[Ll][i][s][t][b][l][a][c][k]", admins_only=True)
+@ayra_cmd(pattern="^[Ll][i][s][t][b][l]", admins_only=True)
 async def lsnote(e):
     if x := list_blacklist(e.chat_id):
         sd = get_string("blk_5")
