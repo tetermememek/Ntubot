@@ -66,16 +66,16 @@ async def koc(e):
 
 @ayra_cmd(pattern="^[Hh][Uu][Hh](?: |$)(.*)")
 async def _(event):
-    aa = await eor(event, "`\n(\\_/)`" "`\n(●_●)`" "`\n />❤️ **Ini Buat Kamu**`")
+    aa = await eor(event, "`\n(\\_/)`" "`\n(●_●)`" "\n />❤️ **Ini Buat Kamu**")
     sleep(3)
-    await aa.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n/>💔  **Aku Ambil Lagi**`")
+    await aa.edit("`\n(\\_/)`" "\n(●_●)" "\n/>💔  **Aku Ambil Lagi**")
     sleep(2)
-    await aa.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💔<\\  **Terimakasih**`")
+    await aa.edit("`\n(\\_/)`" "`\n(●_●)`" "\n💔<\\  **Terimakasih**")
 
 
 @ayra_cmd(pattern=r"^[Cc][Ee][Rr][Ii][Tt][Aa][Cc][Ii][Nn][Tt][Aa]$")
 async def _(event):
-    input_str = event.pattern_match.group(1)
+    input_str = event.pattern_match.group(2)
     if input_str == "ceritacinta":
         await event.edit(input_str)
 
