@@ -62,14 +62,14 @@ async def lsnote(e):
 
 async def blacklist(e):
     if x := get_blacklist(e.chat_id):
-        for z in e.text.lower().split():
-            for zz in x:
-                if z == zz:
-                    try:
-                        await e.delete()
-                        break
-                    except BaseException:
-                        break
+        #for z in e.text.lower().split():
+        for zz in x:
+            #if z == zz:
+            try:
+                await e.delete()
+                break
+            except BaseException:
+                break
 
 
 if udB.get_key("BLACKLIST_DB"):
