@@ -51,7 +51,7 @@ _copied_msg = {}
 
 
 @ayra_cmd(
-    pattern="(S|s)tats$",
+    pattern="[Ss]tats$",
 )
 async def stats(
     event: NewMessage.Event,
