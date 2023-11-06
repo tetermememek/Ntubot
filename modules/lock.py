@@ -20,7 +20,7 @@ from . import ayra_cmd
 
 
 @ayra_cmd(
-    pattern="([Uu][nN|)[lL]ock( (.*)|$)",
+    pattern="[Uu][nN[lL]ock( (.*)|$)",
     admins_only=True,
     manager=True,
     require="change_info",
