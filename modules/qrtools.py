@@ -67,7 +67,7 @@ async def cd(e):
         os.remove(cimg)
 
 
-@ayra_cmd(pattern="(A|a)ddqr( (.*)|$)")
+@ayra_cmd(pattern="[Aa]ddqr( (.*)|$)")
 async def qrwater(e):
     msg = e.pattern_match.group(1).strip()
     r = await e.get_reply_message()
@@ -91,7 +91,7 @@ async def qrwater(e):
     os.remove(dl)
 
 
-@ayra_cmd(pattern="(q|Q)rdecode$")
+@ayra_cmd(pattern="[qQ]rdecode$")
 async def decod(e):
     r = await e.get_reply_message()
     if not (r and r.media):
