@@ -35,7 +35,7 @@ TMP_DOWNLOAD_DIRECTORY = "resources/downloads/"
 _copied_msg = {}
 
 
-@ayra_cmd(pattern="(p|P)aste( (.*)|$)", manager=False, allow_all=True)
+@ayra_cmd(pattern="[pP]aste( (.*)|$)", manager=False, allow_all=True)
 async def _(event):
     try:
         input_str = event.text.split(maxsplit=1)[1]
