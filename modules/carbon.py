@@ -197,7 +197,7 @@ def vcmention(user):
     return f"[{full_name}](tg://user?id={user.id})"
 
 
-@ayra_cmd(pattern="(rc|c)arbon")
+@ayra_cmd(pattern="^[cC][a][r][b][o][n]")
 async def crbn(event):
     from_user = vcmention(event.sender)
     xxxx = await eor(event, get_string("com_1"))
