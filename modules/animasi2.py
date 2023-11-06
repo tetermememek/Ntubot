@@ -29,7 +29,7 @@ from time import sleep
 from . import *
 
 
-@ayra_cmd(pattern="^[Hh][Uu][Aa]$")
+@ayra_cmd(pattern="[Hh][Uu][Aa]$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         response = """
