@@ -34,7 +34,7 @@ from telethon.tl.types import MessageMediaPhoto as photu
 from . import ayra_bot, ayra_cmd, check_filename, get_string
 
 
-@ayra_cmd(pattern="(q|Q)rcode( (.*)|$)")
+@ayra_cmd(pattern="[qQ]rcode( (.*)|$)")
 async def cd(e):
     reply = await e.get_reply_message()
     msg = e.pattern_match.group(1).strip()
