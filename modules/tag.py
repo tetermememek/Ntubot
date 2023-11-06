@@ -34,7 +34,7 @@ emoji = "😀 😃 😄 😁 😆 😅 😂 🤣 😭 😗 😙 😚 😘 🥰 �
 )
 
 
-@ayra_cmd(pattern="all(?: |$)(.*)")
+@ayra_cmd(pattern="[Aa][l][l](?: |$)(.*)")
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
@@ -89,7 +89,7 @@ async def mentionall(event):
         pass
 
 
-@ayra_cmd(pattern="batal(?: |$)")
+@ayra_cmd(pattern="[Bb][a][t][a][l](?: |$)")
 async def lu_anj(event):
     if not event.chat_id in spam_chats:
         return await event.respond("**Bego orang gak ada tag all**")
@@ -101,7 +101,7 @@ async def lu_anj(event):
         return await event.respond("**Iya Anjeng Nih Gua Stop.**")
 
 
-@ayra_cmd(pattern="emojitag(?: |$)(.*)")
+@ayra_cmd(pattern="[Ee][m][o][j][i][t][a][g](?: |$)(.*)")
 async def lu_kontol(event):
     chat_id = event.chat_id
     if event.is_private:
