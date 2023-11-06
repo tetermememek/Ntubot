@@ -31,39 +31,36 @@ from . import *
 
 @ayra_cmd(pattern="^[Hh][Uu][Aa]$")
 async def koc(e):
-    response = """
-    أ‿أ
-    ╥﹏╥
-    (;﹏;)
-    (ToT)
-    (┳Д┳)
-    (ಥ﹏ಥ)
-    ；へ：）
-    (T＿T)
-   （πーπ）
-    (Ｔ▽Ｔ)
-    (⋟﹏⋞)
-   （ｉДｉ）
-    (´Д⊂ヽ)
-    (;Д;)
-    (>﹏<）
-    (TдT)
-    (つ﹏⊂)
-    ༼☯﹏☯༽
-    (ノ﹏ヽ)
-    (ノAヽ)
-    (╥_╥)
-    (T⌓T)
-    (༎ຶ⌑༎ຶ)
-    (☍﹏⁰)｡
-    (ಥ_ʖಥ)
-    (つд⊂)
-    (≖͞_≖̥)
-    (இ﹏இ`｡)
-    ༼ಢ_ಢ༽
-    ༼ ༎ຶ ෴ ༎ຶ༽
-    """
-    await e.respond(response)
+        await e.edit("أ‿أ")
+        await e.edit("╥﹏╥")
+        await e.edit("(;﹏;)")
+        await e.edit("(ToT)")
+        await e.edit("(┳Д┳)")
+        await e.edit("(ಥ﹏ಥ)")
+        await e.edit("（；へ：）")
+        await e.edit("(T＿T)")
+        await e.edit("（πーπ）")
+        await e.edit("(Ｔ▽Ｔ)")
+        await e.edit("(⋟﹏⋞)")
+        await e.edit("（ｉДｉ）")
+        await e.edit("(´Д⊂ヽ")
+        await e.edit("(;Д;)")
+        await e.edit("（>﹏<）")
+        await e.edit("(TдT)")
+        await e.edit("(つ﹏⊂)")
+        await e.edit("༼☯﹏☯༽")
+        await e.edit("(ノ﹏ヽ)")
+        await e.edit("(ノAヽ)")
+        await e.edit("(╥_╥)")
+        await e.edit("(T⌓T)")
+        await e.edit("(༎ຶ⌑༎ຶ)")
+        await e.edit("(☍﹏⁰)｡")
+        await e.edit("(ಥ_ʖಥ)")
+        await e.edit("(つд⊂)")
+        await e.edit("(≖͞_≖̥)")
+        await e.edit("(இ﹏இ`｡)")
+        await e.edit("༼ಢ_ಢ༽")
+        await e.edit("༼ ༎ຶ ෴ ༎ຶ༽")
 
 
 @ayra_cmd(pattern="^[Hh][Uu][Hh](?: |$)(.*)")
@@ -144,9 +141,9 @@ async def _(event):
 
     animation_interval = 0.5
 
-    animation_ttl = range(0, 6)
+    animation_ttl = range(0, 5)
 
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
 
-        await event.edit(animation_chars[i % 6])
+        await event.edit(animation_chars[i % 5])
