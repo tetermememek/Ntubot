@@ -27,7 +27,7 @@ async def lu_pro(jink):
     trans = Translator()
     b = 'id'
     if jink.is_reply:
-        teks = await jink.get_reply_message()
+        teks = jink.reply_to_msg.text or jink.reply_to_msg.caption
         if not teks:
             return await jink.reply("Tidak ada teks yang dapat dideteksi.")
         hasil = await trans.detect(teks)
