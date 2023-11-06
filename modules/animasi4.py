@@ -65,7 +65,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^frog$")
+@ayra_cmd(pattern="^[Ff][r][o][g]$")
 async def _(event):
     await eor(
         event,
@@ -87,7 +87,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^dfrog$")
+@ayra_cmd(pattern="^[Dd][f][r][o][g]$")
 async def _(event):
     await eor(
         event,
@@ -109,7 +109,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^strump$")
+@ayra_cmd(pattern="^[Ss][t][r][u][m][p]$")
 async def _(event):
     await eor(
         event,
@@ -131,7 +131,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^scina$")
+@ayra_cmd(pattern="^[Ss][c][i][n][a]$")
 async def _(event):
     await eor(
         event,
@@ -154,7 +154,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^wlcm$")
+@ayra_cmd(pattern="^[Ww][l][c][m]$")
 async def _(event):
     await eor(
         event,
@@ -171,7 +171,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^gta$")
+@ayra_cmd(pattern="^[Gg][t][a]$")
 async def _(event):
     await eor(
         event,
@@ -189,7 +189,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="^sthink$")
+@ayra_cmd(pattern="^[Ss][t][h][i][n][k]$")
 async def _(event):
     await eor(
         event,
