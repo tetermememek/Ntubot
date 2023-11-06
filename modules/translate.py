@@ -19,15 +19,18 @@ from gpytranslate import Translator
 
 from . import ayra_cmd
 
-BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
+from gpytranslate import Translator
 
+BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
 async def lu_pro(jink):
     trans = Translator()
-
+    
     if jink.is_reply:
         teks = await jink.get_reply_message()
+        if not teks:
+            return await jink.reply("Tidak ada teks yang dapat dideteksi.")
         hasil = await trans.detect(teks)
     else:
         kntl = jink.pattern_match.group(1).split(None, 1)
@@ -35,16 +38,13 @@ async def lu_pro(jink):
             kode_bahasa = kntl[0]
             teks = kntl[1]
             if kode_bahasa not in BAHASA:
-                return await jink.reply(
-                    "**Kode bahasa tidak valid. Gunakan kode bahasa yang didukung.**"
-                )
+                return await jink.reply("Kode bahasa tidak valid. Gunakan kode bahasa yang didukung.")
             hasil = await trans.detect(teks)
         else:
-            return await jink.reply(
-                "**Format perintah salah. Gunakan perintah seperti ini: `.tr id Teks yang akan diterjemahkan`**"
-            )
+            return await jink.reply("Format perintah salah. Gunakan perintah seperti ini: `.tr en-id Teks yang akan diterjemahkan`")
 
-    translation = trans.translate(teks, src=hasil.lang, dest=kode_bahasa)
-    mmk = f"<b>Dari Bahasa {hasil.lang} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation.text}</code>"
+    translation = trans.translate(teks, src=hasil[0], dest=kode_bahasa)
+    mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation.text}</code>"
 
     await jink.reply(mmk)
+
