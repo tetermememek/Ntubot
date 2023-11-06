@@ -15,7 +15,7 @@
 from . import *
 
 
-@ayra_cmd(pattern="ss(?:\\s+(.*))?")
+@ayra_cmd(pattern="[Ss](?:\\s+(.*))?")
 async def webshot(e):
     ajg = await e.eor("`Processing...`")
     try:
