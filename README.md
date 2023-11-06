@@ -96,7 +96,7 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
  • `docker build . -t naya`
 
- • `docker run --name naya-userbot --env-file .env naya`
+ • `docker run --name namalu --cpus 1.2 --memory 500m --env-file .env naya`
 
 </details>
 
