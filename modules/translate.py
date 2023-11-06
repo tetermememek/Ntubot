@@ -26,6 +26,7 @@ BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 async def lu_pro(jink):
     trans = Translator()
     b = "id"
+    kode_bahasa= None
     if jink.is_reply:
         teks = (await jink.get_reply_message()).message
         if not teks:
