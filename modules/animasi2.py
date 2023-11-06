@@ -67,7 +67,6 @@ async def koc(e):
         await e.respond(response)
 
 
-
 @ayra_cmd(pattern="^[Hh][Uu][Hh](?: |$)(.*)")
 async def _(event):
     aa = await eor(event, "`\n(\\_/)`" "`\n(●_●)`" "\n />❤️ **Ini Buat Kamu**")
