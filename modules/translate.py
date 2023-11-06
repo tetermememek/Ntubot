@@ -48,6 +48,6 @@ async def lu_pro(jink):
             )
 
     translation = trans.translate(teks, src=hasil[0], dest=b)
-    mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation.text}</code>"
+    mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation}</code>"
 
     await jink.reply(mmk)
