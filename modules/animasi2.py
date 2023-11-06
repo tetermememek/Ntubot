@@ -29,7 +29,7 @@ from time import sleep
 from . import *
 
 
-@ayra_cmd(pattern="[Hh][Uu][Aa]$")
+@ayra_cmd(pattern="^[Hh][Uu][Aa]$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         response = """
@@ -76,9 +76,19 @@ async def _(event):
     await aa.edit("`\n(\\_/)`" "`\n(●_●)`" "\n💔<\\  **Terimakasih**")
 
 
-@ayra_cmd(pattern=r"^[Cc][Ee][Rr][Ii][Tt][Aa][Cc][Ii][Nn][Tt][Aa](\s+(.*))?$")
+@ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
-    input_str = event.pattern_match.group(2)
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 3
+
+    animation_ttl = range(0, 103)
+
+    input_str = event.pattern_match.group(1)
+
     if input_str == "ceritacinta":
         await event.edit(input_str)
 
@@ -109,8 +119,17 @@ async def _(event):
             await event.edit(animation_chars[i % 103])
 
 
-@ayra_cmd(pattern=r"^[Cc][aA][nN][dD][Aa]$")
+@ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 1
+
+    animation_ttl = range(0, 11)
+
     input_str = event.pattern_match.group(1)
 
     if input_str == "canda":
@@ -142,8 +161,17 @@ async def _(ayiin):
     await ayiin.edit("`\n(\\_/)`" "`\n(●_●)`" "`\n💖<\\  *Tapi Bo'ong Hiyahiyahiya`")
 
 
-@ayra_cmd(pattern="^[oO][wW][nN][eE][rR]$")
+@bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
+
+    if event.fwd_from:
+
+        return
+
+    animation_interval = 0.5
+
+    animation_ttl = range(0, 6)
+
     input_str = event.pattern_match.group(1)
 
     if input_str == "owner":
