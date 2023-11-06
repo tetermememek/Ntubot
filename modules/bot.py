@@ -59,7 +59,15 @@ alive_txt = """
   ◈ Telethon - {}
 """
 
-in_alive = "<b>Naya-Userbot</b>\n<b>    status :</b> <code>{}</code>{}\n<b>     expired_on :</b> <code>{}</code>\n<b>     dc_id :</b> <code>{}</code>\n<b>    ping_dc :</b> <code>{} ms</code>\n<b>    version :</b> <code>{}</code>\n<b>     nayalibs :</b> <code>{}</code>\n<b>     uptime :</b> <code>{}</code>"
+in_alive = """
+<b> Naya-Userbot</b>
+<b> status :</b> <code>{}</code>{}
+<b>   expired_on :</b> <code>{}</code>
+<b>   dc_id :</b> <code>{}</code>
+<b>   ping_dc :</b> <code>{} ms</code>
+<b>   version :</b> <code>{}</code>
+<b>   nayalibs :</b> <code>{}</code>
+<b>   uptime :</b> <code>{}</code>"""
 
 absen = [
     "**Hadir Sayang** 😳",
