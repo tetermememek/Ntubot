@@ -76,7 +76,7 @@ from Ayra.kynan import *
 from . import *
 
 
-@ayra_cmd(pattern="Riz$")
+@ayra_cmd(pattern="[Rr]iz$")
 @register(incoming=True, from_users=DEVS, pattern=r"^Riz")
 async def _(event):
     xx = await event.eor("Aku")
@@ -91,7 +91,7 @@ async def _(event):
 # Create by myself @localheart
 
 
-@ayra_cmd(pattern="(S|s)mgt$")
+@ayra_cmd(pattern="[Ss]mgt$")
 async def _(event):
     xx = await event.eor("Apapun Yang Terjadi")
     sleep(3)
@@ -103,7 +103,7 @@ async def _(event):
 # Create by myself @localheart
 
 
-@ayra_cmd(pattern=r"(Y|y)wc$")
+@ayra_cmd(pattern=r"[Yy]wc$")
 async def _(event):
     await event.client.send_message(
         event.chat_id, "Ok Sama Sama", reply_to=event.reply_to_msg_id
@@ -111,7 +111,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="(J|j)amet$")
+@ayra_cmd(pattern="[Jj]amet$")
 async def _(event):
     xx = await event.eor("WOII")
     sleep(1.5)
@@ -136,7 +136,7 @@ async def _(event):
     await xx.edit("LEMBEK NGENTOT🔥")
 
 
-@ayra_cmd(pattern=r"(pp|Pp)")
+@ayra_cmd(pattern=r"[pP]p$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -146,7 +146,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"(Dp|dp)")
+@ayra_cmd(pattern=r"[dD]p$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -156,12 +156,12 @@ async def _(event):
     await event.delete()
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^riz")
+@register(incoming=True, from_users=DEVS, pattern=r"^riz$")
 async def _(event):
     await event.reply("**Mmuuaahh😘😘**")
 
 
-@ayra_cmd(pattern=r"skb")
+@ayra_cmd(pattern=r"[sS]kb$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -171,7 +171,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"(Nb|nb)")
+@ayra_cmd(pattern=r"[nN]b$")
 async def _(event):
     if event.chat_id in NOSPAM_CHAT:
         return await event.eor(event, "Perintah ini Dilarang digunakan di Group ini")
@@ -183,7 +183,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"(met|Met)")
+@ayra_cmd(pattern=r"[Mm]et$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -193,7 +193,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"(war|War)")
+@ayra_cmd(pattern=r"[wW]ar$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -203,7 +203,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="wartai$")
+@ayra_cmd(pattern="[Ww]artai$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -213,7 +213,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="(K|k)ismin$")
+@ayra_cmd(pattern="[Kk]ismin$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -223,7 +223,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="sokab$")
+@ayra_cmd(pattern="[sS]okab$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -233,7 +233,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="(G|g)embel$")
+@ayra_cmd(pattern="[Gg]embel$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -243,7 +243,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="(C|c)uih$")
+@ayra_cmd(pattern="[Cc]uih$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -253,7 +253,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"[dD][iI][hH]")
+@ayra_cmd(pattern=r"[dD][iI][hH]$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -263,7 +263,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"[gG][cC][sS]")
+@ayra_cmd(pattern=r"[gG][cC][sS]$")
 async def _(event):
     if event.chat_id in NOSPAM_CHAT:
         return await event.eor(event, "Perintah ini Dilarang digunakan di Group ini")
@@ -275,7 +275,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern=r"skb2")
+@ayra_cmd(pattern=r"[Ss]kb2$")
 async def _(event):
     await event.client.send_message(
         event.chat_id,
@@ -285,7 +285,7 @@ async def _(event):
     await event.delete()
 
 
-@ayra_cmd(pattern="(V|v)irtual$")
+@ayra_cmd(pattern="[Vv]irtual$")
 async def _(event):
     xx = await event.eor("OOOO")
     sleep(1.5)
