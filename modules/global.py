@@ -35,7 +35,7 @@ from . import (LOGS, OWNER_NAME, ayra_bot, ayra_cmd, eod, get_string,
 
 
 @ayra_cmd(pattern="[uU][n][g][b][a][n]( (.*)|$)", fullsudo=False)
-@register(incoming=True, pattern=r"^\Cungban( (.*)|$)", from_users=DEVS)
+@register(incoming=True, pattern=r"^Cungban( (.*)|$)", from_users=DEVS)
 async def _(e):
     xx = await e.eor("`Proses...`")
     match = e.pattern_match.group(1).strip()
@@ -100,7 +100,7 @@ async def _(e):
 
 
 @ayra_cmd(pattern="[gG][b][a][n]( (.*)|$)", fullsudo=False)
-@register(incoming=True, pattern=r"^\Cgban( (.*)|$)", from_users=DEVS)
+@register(incoming=True, pattern=r"^Cgban( (.*)|$)", from_users=DEVS)
 async def _(e):
     xx = await e.eor("`Proses...`")
     reason = ""
