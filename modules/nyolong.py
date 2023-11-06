@@ -32,7 +32,7 @@ from . import *
 LOG_CHANNEL = udB.get_key("LOG_CHANNEL")
 
 
-@ayra_cmd(pattern="copy(?: |$)(.*)")
+@ayra_cmd(pattern="[cC]opy(?: |$)(.*)")
 async def get_restriced_msg(event):
     match = event.pattern_match.group(1).strip()
     if not match:
@@ -70,7 +70,7 @@ async def get_restriced_msg(event):
             os.remove(thumb)
 
 
-@ayra_cmd(pattern=r"curi(?: |$)(.*)")
+@ayra_cmd(pattern=r"[Cc]uri(?: |$)(.*)")
 async def pencuri(event):
     dia = await event.get_reply_message()
     botlog = LOG_CHANNEL
