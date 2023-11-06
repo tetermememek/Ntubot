@@ -113,7 +113,7 @@ async def _(event):
         await xx.edit("**Tidak bisa menemukan ayang.**")
 
 
-@ayra_cmd(pattern="(ppcp|Ppcp)$")
+@ayra_cmd(pattern="[pP][p][c][p]$")
 async def _(event):
     xx = await eor(event, "`Tunggu Sebentar...`")
     try:
@@ -134,7 +134,7 @@ async def _(event):
         await xx.edit("**Tidak bisa menemukan ppcp.**")
 
 
-@ayra_cmd(pattern="(Ppcp2|ppcp2)$")
+@ayra_cmd(pattern="[pP][p][c][p][2]$")
 async def _(event):
     xx = await eor(event, "`Tunggu Sebentar...`")
     try:
@@ -155,7 +155,7 @@ async def _(event):
         await xx.edit("**Tidak bisa menemukan ppcp2.**")
 
 
-@ayra_cmd(pattern="(Anime|anime)$")
+@ayra_cmd(pattern="[Aa][n][i][m][e]$")
 async def _(event):
     xx = await eor(event, "`Tunggu Sebentar...`")
     try:
@@ -176,7 +176,7 @@ async def _(event):
         await xx.edit("**Tidak bisa menemukan anime.**")
 
 
-@ayra_cmd(pattern="(anime2|Anime2)$")
+@ayra_cmd(pattern="[Aa][n][i][m][e][2]$")
 async def _(event):
     xx = await eor(event, "`Tunggu Sebentar...`")
     try:
@@ -197,7 +197,7 @@ async def _(event):
         await xx.edit("**Tidak bisa menemukan anime2.**")
 
 
-@ayra_cmd(pattern="(pap|Pap)$")
+@ayra_cmd(pattern="[pP][a][p]$")
 async def _(event):
     xx = await eor(event, "`Tunggu Sebentar...`")
     try:
