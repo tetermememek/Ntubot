@@ -42,7 +42,7 @@ from . import *
 
 
 @ayra_cmd(
-    pattern="github (.*)",
+    pattern="[Gg][i][t][h][u][b] (.*)",
 )
 async def gitsearch(event):
     usrname = event.pattern_match.group(1).strip()
@@ -83,7 +83,7 @@ async def gitsearch(event):
 
 
 @ayra_cmd(
-    pattern="google( (.*)|$)",
+    pattern="[Gg]oogle( (.*)|$)",
     manager=True,
 )
 async def google(event):
@@ -104,7 +104,7 @@ async def google(event):
     await x.eor(omk, link_preview=False)
 
 
-@ayra_cmd(pattern="gimg( (.*)|$)")
+@ayra_cmd(pattern="[Gg]img( (.*)|$)")
 async def goimg(event):
     query = event.pattern_match.group(1).strip()
     if not query:
@@ -126,7 +126,7 @@ async def goimg(event):
     await nn.delete()
 
 
-@ayra_cmd(pattern="reverse$")
+@ayra_cmd(pattern="[Rr]everse$")
 async def reverse(event):
     reply = await event.get_reply_message()
     if not reply:
@@ -169,7 +169,7 @@ async def reverse(event):
 
 
 @ayra_cmd(
-    pattern="saavn( (.*)|$)",
+    pattern="[Ss]aavn( (.*)|$)",
 )
 async def siesace(e):
     song = e.pattern_match.group(1).strip()
