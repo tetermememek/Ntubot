@@ -16,10 +16,10 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 
 
 from gpytranslate import Translator
-
+import os
 from . import ayra_cmd
 
-BAHASA = list(map("en id").split())
+BAHASA = list(map(os.getenv("en id").split()))
 
 
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
