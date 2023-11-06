@@ -18,6 +18,7 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 from gpytranslate import Translator
 
 from . import ayra_cmd
+from ._trans import *
 
 BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 
@@ -47,7 +48,7 @@ async def lu_pro(jink):
                 "Format perintah salah. Gunakan perintah seperti ini: `.tr en-id Teks yang akan diterjemahkan`"
             )
 
-    translation = trans.translate(teks, src=hasil[0], dest=b)
-    mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation}</code>"
+    translation = trans.translate(teks, src=hasil, dest=b)
+    mmk = f"<b>Dari Bahasa {hasil} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation}</code>"
 
     await jink.reply(mmk)
