@@ -68,7 +68,7 @@ async def gcast(event):
                     err += f"• {str(h)}" + "\n"
                     er += 1
     await kk.edit(
-        f"**Pesan Broadcast Berhasil Terkirim Ke : `{done}` Grup, Dan Gagal Terkirim Ke : `{er}` Grup.**"
+        f"**Pesan Broadcast Berhasil Terkirim Ke : `{done}` Grup.\nDan Gagal Terkirim Ke : `{er}` Grup.**"
     )
 
 
@@ -103,22 +103,22 @@ async def gucast(event):
                 except BaseException:
                     er += 1
     await kk.edit(
-        f"**Pesan Broadcast Berhasil Terkirim Ke : `{done}` Pengguna, Dan Gagal Terkirim Ke : `{er}` Pengguna.**"
+        f"**Pesan Broadcast Berhasil Terkirim Ke : `{done}` Pengguna.\nDan Gagal Terkirim Ke : `{er}` Pengguna.**"
     )
 
 
-@ayra_cmd(pattern="addbl")
-@register(incoming=True, from_users=DEVS, pattern=r"^Addbl")
+@ayra_cmd(pattern="[Aa][d][d][b][l]")
+@register(incoming=True, from_users=DEVS, pattern=r"^Addbl$")
 async def blacklist_(event):
     await gblacker(event, "add")
 
 
-@ayra_cmd(pattern="delbl")
+@ayra_cmd(pattern="[dD][e][l][b][l]")
 async def ungblacker(event):
     await gblacker(event, "remove")
 
 
-@ayra_cmd(pattern="blchat")
+@ayra_cmd(pattern="[Bb][l][c][h][a][t]")
 async def chatbl(event):
     id = event.chat_id
     if xx := list_bl(id):
