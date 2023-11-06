@@ -30,7 +30,7 @@ async def lock_unlock(e):
     if not pler:
         return await e.eor("`Berikan kata kunci yang tepat..`", time=5)
 
-    lock = e.pattern_match.group(0).lower() == "lock"
+    lock = e.pattern_match.group(0).lower() == ""
 
     ml = lock_unlock(pler, lock)
     if not ml:
