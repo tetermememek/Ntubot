@@ -80,7 +80,7 @@ FilesEMOJI = {
 }
 
 
-@ayra_cmd(pattern="(u|U)sage")
+@ayra_cmd(pattern="[uU][s][a][g][e]")
 async def usage_finder(event):
     x = await event.eor(get_string("com_1"))
     try:
