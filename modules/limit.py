@@ -17,7 +17,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from . import ayra_cmd
 
 
-@ayra_cmd(pattern="(L|l)imit$")
+@ayra_cmd(pattern="[Ll]imit$")
 async def demn(ayra):
     chat = "@SpamBot"
     msg = await ayra.eor("Memeriksa Jika Anda Terbatas...")
