@@ -75,7 +75,7 @@ from . import *
 from ._music import *
 
 
-@vc_asst("play")
+@vc_asst("[Pp]lay")
 async def play_music_(event):
     if "playfrom" in event.text.split()[0]:
         return  # For PlayFrom Conflict
@@ -164,7 +164,7 @@ async def play_music_(event):
         )
 
 
-@vc_asst("mutevc")
+@vc_asst("[Mm]utevc")
 async def mute(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -179,7 +179,7 @@ async def mute(event):
     await event.eor(get_string("vcbot_12"))
 
 
-@vc_asst("unmutevc")
+@vc_asst("[Uu]nmutevc")
 async def unmute(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -194,7 +194,7 @@ async def unmute(event):
     await event.eor("`Menyalakan pemutaran di obrolan ini.`")
 
 
-@vc_asst("pausevc")
+@vc_asst("[Pp]ausevc")
 async def pauser(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -209,7 +209,7 @@ async def pauser(event):
     await event.eor(get_string("vcbot_14"))
 
 
-@vc_asst("resumevc")
+@vc_asst("[Rr]esumevc")
 async def resumer(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -224,7 +224,7 @@ async def resumer(event):
     await event.eor(get_string("vcbot_13"))
 
 
-@vc_asst("addauth", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Aa]ddauth", from_users=owner_and_sudos(), vc_auth=False)
 async def auth_group(event):
     try:
         key = event.text.split(" ", maxsplit=1)[1]
@@ -245,7 +245,7 @@ async def auth_group(event):
     )
 
 
-@vc_asst("remauth", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Rr]emauth", from_users=owner_and_sudos(), vc_auth=False)
 async def auth_group(event):
     chat = event.chat_id
     key = udB.get_key("VC_AUTH_GROUPS") or {}
@@ -260,7 +260,7 @@ async def auth_group(event):
     await event.eor(get_string("vcbot_10"))
 
 
-@vc_asst("listauth", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Ll]istauth", from_users=owner_and_sudos(), vc_auth=False)
 async def listVc(e):
     chats = udB.get_key("VC_AUTH_GROUPS")
     if not chats:
@@ -276,7 +276,7 @@ async def listVc(e):
     await e.eor(text, parse_mode="html")
 
 
-@vc_asst("listplay")
+@vc_asst("[Ll]istplay")
 async def lstqueue(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -292,7 +292,7 @@ async def lstqueue(event):
         return await event.eor(get_string("vcbot_21"))
 
 
-@vc_asst("rejoin")
+@vc_asst("[Rr]ejoin")
 async def rejoiner(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -310,7 +310,7 @@ async def rejoiner(event):
     await event.eor(get_string("vcbot_5"))
 
 
-@vc_asst("skip")
+@vc_asst("[Ss]kip")
 async def skipper(event):
     if len(event.text.split()) > 1:
         chat = event.text.split()[1]
@@ -324,7 +324,7 @@ async def skipper(event):
     await aySongs.play_from_queue()
 
 
-@vc_asst("vplay")
+@vc_asst("[Vv]play")
 async def video_c(event):
     xx = await event.eor(get_string("com_1"))
     chat = event.chat_id
@@ -387,7 +387,7 @@ async def video_c(event):
     await xx.delete()
 
 
-@vc_asst("listvcaccess$", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Ll]istvcaccess$", from_users=owner_and_sudos(), vc_auth=False)
 async def _(e):
     xx = await e.eor(get_string("vcbot_11"))
     mm = get_vcsudos()
@@ -402,7 +402,7 @@ async def _(e):
     await xx.edit(pp, parse_mode="html")
 
 
-@vc_asst("rmvcaccess( (.*)|$)", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Rr]mvcaccess( (.*)|$)", from_users=owner_and_sudos(), vc_auth=False)
 async def _(e):
     xx = await e.eor("`Disapproving to access Voice Chat features...`")
     input = e.pattern_match.group(1).strip()
@@ -433,7 +433,7 @@ async def _(e):
         return await xx.edit(f"`{ex}`", time=5)
 
 
-@vc_asst("vcaccess( (.*)|$)", from_users=owner_and_sudos(), vc_auth=False)
+@vc_asst("[Vv]caccess( (.*)|$)", from_users=owner_and_sudos(), vc_auth=False)
 async def _(e):
     xx = await e.eor("`Approving to access Voice Chat features...`")
     input = e.pattern_match.group(1).strip()
@@ -463,7 +463,7 @@ async def _(e):
         return await xx.eor(f"`{ex}`", time=5)
 
 
-@vc_asst("ytplaylist")
+@vc_asst("[Yy]tplaylist")
 async def live_stream(e):
     xx = await e.eor(get_string("com_1"))
     if len(e.text.split()) <= 1:
