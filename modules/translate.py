@@ -25,7 +25,7 @@ BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
 async def lu_pro(jink):
     trans = Translator()
-    b = 'id'
+    b = "id"
     if jink.is_reply:
         teks = jink.reply_to.quote_text
         if not teks:
