@@ -25,7 +25,7 @@ BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
 async def lu_pro(jink):
     trans = Translator()
-
+    b = 'id'
     if jink.is_reply:
         teks = await jink.get_reply_message()
         if not teks:
@@ -46,7 +46,7 @@ async def lu_pro(jink):
                 "Format perintah salah. Gunakan perintah seperti ini: `.tr en-id Teks yang akan diterjemahkan`"
             )
 
-    translation = trans.translate(teks, src=hasil[0], dest=kode_bahasa)
+    translation = trans.translate(teks, src=hasil[0], dest=dest)
     mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation.text}</code>"
 
     await jink.reply(mmk)
