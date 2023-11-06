@@ -19,20 +19,20 @@ from gpytranslate import Translator
 
 from . import ayra_cmd
 
-BAHASA = ["id", "en"]
+BAHASA = list(map("en id").split())
 
 
-@ayra_cmd(pattern=r"^tr(?: |$)(.*)", manager=False)
+@ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
 async def lu_pro(jink):
     trans = Translator()
-    dest = "id"
+    #dest = "id"
     if jink.is_reply:
         teks = await jink.get_reply_message()
         hasil = await trans.detect(teks)
     else:
         kntl = jink.pattern_match.group(1).split(None, 1)
         if len(kntl) == 2:
-            dest = kntl[0]
+            BAHASA = kntl[0]
             teks = kntl[1]
             hasil = await trans.detect(teks)
         else:
