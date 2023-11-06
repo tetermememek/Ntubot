@@ -131,7 +131,7 @@ async def pack_kangish(_):
 
 
 @ayra_cmd(
-    pattern="(K|k)ang",
+    pattern="[kK]ang",
 )
 async def hehe(args):
     ayra_bot = args.client
@@ -355,7 +355,7 @@ async def hehe(args):
 
 
 @ayra_cmd(
-    pattern="(R|r)ound$",
+    pattern="[rR]ound$",
 )
 async def ayraround(event):
     ureply = await event.get_reply_message()
@@ -392,7 +392,7 @@ async def ayraround(event):
 
 
 @ayra_cmd(
-    pattern="(D|d)estroy$",
+    pattern="[Dd]estroy$",
 )
 async def ayradestroy(event):
     ayra = await event.get_reply_message()
@@ -432,7 +432,7 @@ async def ayradestroy(event):
 
 
 @ayra_cmd(
-    pattern="(T|t)iny$",
+    pattern="[Tt]iny$",
 )
 async def ayratiny(event):
     reply = await event.get_reply_message()
