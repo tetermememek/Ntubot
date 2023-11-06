@@ -27,7 +27,7 @@ async def lu_pro(jink):
     trans = Translator()
     b = 'id'
     if jink.is_reply:
-        teks = reply.message
+        teks = jink.reply_to.message
         if not teks:
             return await jink.reply("Tidak ada teks yang dapat dideteksi.")
         hasil = await trans.detect(teks)
@@ -46,7 +46,7 @@ async def lu_pro(jink):
                 "Format perintah salah. Gunakan perintah seperti ini: `.tr en-id Teks yang akan diterjemahkan`"
             )
 
-    translation = trans.translate(teks, src=hasil[0], dest=dest)
+    translation = trans.translate(teks, src=hasil[0], dest=b)
     mmk = f"<b>Dari Bahasa {hasil[0]} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation.text}</code>"
 
     await jink.reply(mmk)
