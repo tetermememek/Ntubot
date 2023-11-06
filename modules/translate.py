@@ -21,7 +21,7 @@ from gpytranslate import Translator
 
 from . import ayra_cmd
 
-BAHASA = list(map(os.getenv("BAHASA", "en id").split()))
+BAHASA = ("en id").split()
 
 
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
