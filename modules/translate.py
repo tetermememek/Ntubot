@@ -25,7 +25,7 @@ BAHASA = list(map("en id").split())
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
 async def lu_pro(jink):
     trans = Translator()
-    #dest = "id"
+    # dest = "id"
     if jink.is_reply:
         teks = await jink.get_reply_message()
         hasil = await trans.detect(teks)
