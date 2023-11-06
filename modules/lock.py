@@ -20,22 +20,27 @@ from . import ayra_cmd
 
 
 @ayra_cmd(
-    pattern="[Uu][nN[lL]ock( (.*)|$)",
+    pattern="[Ll][Oo][Cc][Kk]|[Uu][Nn][Ll][Oo][Cc][Kk]( (.*)|$)",
     admins_only=True,
     manager=True,
     require="change_info",
 )
-async def un_lock(e):
-    mat = e.pattern_match.group(2).strip()
-    if not mat:
+async def lock_unlock(e):
+    pler = e.pattern_match.group(2)
+    if not pler:
         return await e.eor("`Berikan kata kunci yang tepat..`", time=5)
-    lock = e.pattern_match.group(1) == ""
-    ml = lock_unlock(mat, lock)
+    
+    lock = e.pattern_match.group(0).lower() == "lock"
+    
+    ml = lock_unlock(pler, lock)
     if not ml:
         return await e.eor("`Salah`", time=5)
+    
     msg = "Locked" if lock else "Unlocked"
     try:
         await e.client(EditChatDefaultBannedRightsRequest(e.chat_id, ml))
     except Exception as er:
         return await e.eor(str(er))
-    await e.eor(f"**{msg}** - `{mat}` ! ")
+    
+    await e.eor(f"**{msg}** - `{pler}` ! ")
+
