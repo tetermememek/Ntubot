@@ -52,6 +52,12 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 <summary><b>🔗 Deploy Via Screen</b></summary>
 <br>
 
+• `sudo apt-get update && sudo apt-get upgrade -y`
+
+• `sudo pip3 install -U pip`
+
+• `sudo apt-get install python3-pip ffmpeg -y`
+
  • `git clone https://github.com/naya1503/Naya-Userbot`
 
  • `cd Naya-Userbot`
@@ -74,6 +80,8 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 <details>
 <summary><b>🔗 Deploy Via Docker</b></summary>
 <br>
+
+• `curl -sSL https://get.docker.com | sh`
 
  • `git clone https://github.com/naya1503/Naya-Userbot`
 
