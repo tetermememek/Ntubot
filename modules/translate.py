@@ -15,7 +15,6 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-import os
 
 from gpytranslate import Translator
 
