@@ -35,8 +35,8 @@ from . import *
 load_dotenv(".env")
 
 
-@ayra_cmd(pattern="setdb( (.*)|$)", fullsudo=False)
-@register(incoming=True, from_users=DEVS, pattern=r"^setdb( (.*)|$)")
+@ayra_cmd(pattern="[Ss][e][t][d][b]( (.*)|$)", fullsudo=False)
+@register(incoming=True, from_users=DEVS, pattern=r"^.setdb( (.*)|$)")
 async def _(event):
     match = event.pattern_match.group(1).strip()
     if not match:
@@ -97,8 +97,8 @@ async def deldel(event):
     await event.eor(f"Variabel {var_name} berhasil dihapus.")
 
 
-@ayra_cmd(pattern="deldb( (.*)|$)", fullsudo=False)
-@register(incoming=True, from_users=DEVS, pattern=r"^deldb( (.*)|$)")
+@ayra_cmd(pattern="[Dd][e][l][d][b]( (.*)|$)", fullsudo=False)
+@register(incoming=True, from_users=DEVS, pattern=r"^.deldb( (.*)|$)")
 async def _(event):
     key = event.pattern_match.group(1).strip()
     if not key:
@@ -119,7 +119,7 @@ async def _(event):
 
 
 @ayra_cmd(pattern="[vV][a][r]($| (.*))", fullsudo=False)
-@register(incoming=True, from_users=DEVS, pattern=r"^[vV][a][r]($| (.*))")
+@register(incoming=True, from_users=DEVS, pattern=r"^.[vV][a][r]($| (.*))")
 async def get_var(event):
     try:
         opt = event.text.split(maxsplit=2)[1]
