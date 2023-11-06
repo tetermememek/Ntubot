@@ -61,7 +61,7 @@ def format_btn(buttons: list):
     return buttons
 
 
-@ayra_cmd(pattern="button")
+@ayra_cmd(pattern="[Bb][u][t][t][o][n]")
 async def butt(event):
     media, wut, text = None, None, None
     if event.reply_to:
