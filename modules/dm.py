@@ -51,7 +51,7 @@ async def dm(e):
         await e.eor("Silakan ketik `help dm` untuk bantuan.", time=5)
 
 
-@ayra_cmd(pattern="send( (.*)|$)", fullsudo=False)
+@ayra_cmd(pattern="[Ss]end( (.*)|$)", fullsudo=False)
 async def _(e):
     message = e.pattern_match.group(1).strip()
     if not e.reply_to_msg_id:
