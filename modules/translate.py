@@ -18,7 +18,6 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 from gpytranslate import Translator
 
 from . import ayra_cmd
-from ._trans import *
 
 BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 
