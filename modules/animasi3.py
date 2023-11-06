@@ -703,7 +703,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern="ajg(?: |$)(.*)")
+@ayra_cmd(pattern="^[Aa][j][g]$")
 async def _(event):
     await eor(
         event,
@@ -716,7 +716,7 @@ async def _(event):
     )
 
 
-@ayra_cmd(pattern=r"bernyanyi(?: |$)(.*)")
+@ayra_cmd(pattern=r"^[Bb][e][r][n][y][a][n][y][i]$")
 async def _(event):
     typew = await eor(event, "**Ganteng Doang Gak Bernyanyi (ง˙o˙)ว**")
     sleep(2)
@@ -751,7 +751,7 @@ async def _(event):
     await typew.edit("**♪┗ ( ･o･) ┓♪┏ (・o･) ┛♪**")
 
 
-@ayra_cmd(pattern="santet(?: |$)(.*)")
+@ayra_cmd(pattern="^[Ss][a][n][t][e][t]$")
 async def _(event):
     typew = await eor(event, "`Mengaktifkan Perintah Santet Online....`")
     sleep(2)
