@@ -50,7 +50,7 @@ from telethon.utils import get_input_document
 from . import *
 
 
-@ayra_cmd(pattern="(p|P)ackkang")
+@ayra_cmd(pattern="[pP]ackkang")
 async def pack_kangish(_):
     _e = await _.get_reply_message()
     ayra_bot = _.client
