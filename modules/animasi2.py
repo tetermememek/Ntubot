@@ -78,9 +78,7 @@ async def _(event):
 
 @ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
-
     if event.fwd_from:
-
         return
 
     animation_interval = 3
@@ -121,9 +119,7 @@ async def _(event):
 
 @ayra_bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
-
     if event.fwd_from:
-
         return
 
     animation_interval = 1
@@ -163,9 +159,7 @@ async def _(ayiin):
 
 @bot.on(events.NewMessage(pattern=r"\.$(.*)", outgoing=True))
 async def _(event):
-
     if event.fwd_from:
-
         return
 
     animation_interval = 0.5
