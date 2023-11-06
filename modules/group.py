@@ -36,7 +36,7 @@ from . import LOGS, asst, ayra_cmd, types
 
 
 @ayra_cmd(
-    pattern="getlink( (.*)|$)",
+    pattern="[gG]etlink( (.*)|$)",
     groups_only=True,
     manager=True,
 )
@@ -97,7 +97,7 @@ async def _(e):
 
 
 @ayra_cmd(
-    pattern="buat (g|c)(?: |$)(.*)",
+    pattern="[Bb]uat (g|c)(?: |$)(.*)",
 )
 async def _(e):
     type_of_group = e.pattern_match.group(1).strip()
@@ -158,7 +158,7 @@ async def _(e):
             await xx.edit(str(ex))
 
 
-@ayra_cmd(pattern="unbanall$", manager=True, admins_only=True, require="ban_users")
+@ayra_cmd(pattern="[Uu]nbanall$", manager=True, admins_only=True, require="ban_users")
 async def _(event):
     xx = await event.eor("`Mengumpulkan akun gak guna.`")
     p = 0
@@ -179,7 +179,7 @@ async def _(event):
 
 
 @ayra_cmd(
-    pattern="rmusers( (.*)|$)",
+    pattern="[Rr]musers( (.*)|$)",
     groups_only=True,
     admins_only=True,
     fullsudo=True,
