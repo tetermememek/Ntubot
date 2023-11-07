@@ -7,7 +7,7 @@
 """
 ✘ **Bantuan Untuk Webshot**
 
-๏ **Perintah:** `ss` <link>
+๏ **Perintah:** `webshot` <link>
 ◉ **Keterangan:** Dapatkan screenshot dari link tersebut
 """
 
@@ -15,7 +15,7 @@
 from . import *
 
 
-@ayra_cmd(pattern="[Ss](?:\\s+(.*))?")
+@ayra_cmd(pattern="[wW]ebshot(?:\\s+(.*))?")
 async def webshot(e):
     ajg = await e.eor("`Processing...`")
     try:
