@@ -17,7 +17,7 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 
 
 from gpytranslate import Translator
-
+from contextlib import suppress
 from . import ayra_cmd
 from ._trans import *
 
