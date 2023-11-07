@@ -15,10 +15,7 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-import re
-import subprocess
-import typing
-from functools import reduce
+
 from gpytranslate import Translator
 
 from . import ayra_cmd
