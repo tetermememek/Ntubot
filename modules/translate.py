@@ -15,8 +15,9 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-from gpytranslate import Translator
 from contexlib import suppress
+from gpytranslate import Translator
+
 from . import ayra_cmd
 from ._trans import *
 
