@@ -15,7 +15,10 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 """
 
 
-from contexlib import suppress
+import re
+import subprocess
+import typing
+from functools import reduce
 from gpytranslate import Translator
 
 from . import ayra_cmd
