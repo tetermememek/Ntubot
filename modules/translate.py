@@ -16,38 +16,43 @@ Ini akan menerjemahkan pesan ke Bahasa Indonesia.
 
 
 from gpytranslate import Translator
-
+from contexlib import suppress
 from . import ayra_cmd
+from ._trans import *
 
 BAHASA = ["en", "id", "fr", "es", "de", "it", "ja", "ko", "zh"]
 
 
 @ayra_cmd(pattern=r"^[Tt][r](?: |$)(.*)", manager=False)
-async def lu_pro(jink):
-    trans = Translator()
-    b = "id"
-    kode_bahasa = None
-    if jink.is_reply:
-        teks = (await jink.get_reply_message()).message
-        if not teks:
-            return await jink.reply("Tidak ada teks yang dapat dideteksi.")
-        hasil = await trans.detect(teks)
+async def _(jink):
+    match = jink.pattern_match.group(1)
+    itu = match.split(" ")
+    if itu[0] in BAHASA:
+        is_lang, lang = True, itu[0]
     else:
-        kntl = jink.pattern_match.group(1).split(None, 1)
-        if len(kntl) == 2:
-            kode_bahasa = kntl[0]
-            teks = kntl[1]
-            if kode_bahasa not in BAHASA:
-                return await jink.reply(
-                    "Kode bahasa tidak valid. Gunakan kode bahasa yang didukung."
-                )
-            hasil = await trans.detect(teks)
-        else:
-            return await jink.reply(
-                "Format perintah salah. Gunakan perintah seperti ini: `.tr en-id Teks yang akan diterjemahkan`"
-            )
-
-    translation = trans.translate(teks, src=hasil, dest=b)
-    mmk = f"<b>Dari Bahasa {hasil} Ke Bahasa {kode_bahasa}:</b>\n<code>{teks}</code>\n\n<b>Hasil Terjemahan:</b>\n<code>{translation}</code>"
-
-    await jink.reply(mmk)
+        is_lang, lang = False, BAHASA
+    if jink.is_reply:
+        kata = (await jink.get_reply_message()).message
+        if is_lang:
+            with suppress(BaseException):
+                kata = match.split(maxsplit=1)[1]
+    else:
+        kata = match
+        if is_lang:
+            with suppress(BaseException):
+                kata = match.split(maxsplit=1)[1]
+    if not kata:
+        await jink.eor("`Reply to text message or provide a text!`", time=5)
+        return
+    try:
+        text = strip_format(strip_emoji(kata))
+        translator = Translator()
+        translation = await translator(text, targetlang=lang)
+        tr = "**Detected:** `{}`\n**Translated:** `{}`\n\n```{}```".format(
+            await translator.detect(translation.orig),
+            await translator.detect(translation.text),
+            translation.text,
+        )
+        await jink.eor(tr)
+    except Exception as err:
+        await jink.eor(f"Error {err}")
