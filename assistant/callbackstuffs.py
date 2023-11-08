@@ -202,7 +202,7 @@ heroku_api, app_name = Var.HEROKU_API, Var.HEROKU_APP_NAME
 async def update(eve):
     repo = Repo()
     ac_br = repo.active_branch
-    ups_rem = repo.remote("upstream")
+    #ups_rem = repo.remote("upstream")
     if heroku_api:
         import heroku3
 
@@ -221,7 +221,7 @@ async def update(eve):
             repo.__del__()
             return
         await eve.edit(get_string("clst_1"))
-        ups_rem.fetch(ac_br)
+        #ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
             "https://", f"https://api:{heroku_api}@"
