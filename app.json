@@ -24,7 +24,7 @@
         },
         "MONGO_URI": {
             "description": "Silakan isi Mongo Db/Mongo Url . Jika Build Redis Gagal . Cara ambil nya ketik #tutor di @kynansupport.",
-            "value": ""
+            "value": "",
             "required": false
         },
         "HEROKU_API": {
