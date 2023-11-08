@@ -104,7 +104,7 @@ async def google(event):
     await x.eor(omk, link_preview=False)
 
 
-@ayra_cmd(pattern="[Gg][i][m][g]( (.*)|$)")
+@ayra_cmd(pattern="[Gg]img( (.*)|$)")
 async def goimg(event):
     query = event.pattern_match.group(1).strip()
     if not query:
