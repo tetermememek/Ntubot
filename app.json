@@ -32,7 +32,6 @@
         },
         "HEROKU_APP_NAME": {
             "description": "Isi Coy Jan Dikosongin",
-            "value": "",
             "required": true
         }
     },
