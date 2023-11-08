@@ -22,10 +22,6 @@
             "description": "Silakan isi Telethon Atau Pyrogram V2",
             "value": ""
         },
-        "MONGO_URI": {
-            "description": "Silakan isi Mongo Db/Mongo Url . Cara ambil nya ketik #tutor di @kynansupport.",
-            "value": ""
-        },
         "HEROKU_API": {
             "description": "Isi Coy Jan Dikosongin.",
             "required": true
