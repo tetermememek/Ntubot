@@ -172,7 +172,7 @@ async def ayra_tools(event):
     os.remove(file)
 
 
-@ayra_cmd(pattern="csample (.*)")
+@ayra_cmd(pattern="[Cc]sample (.*)")
 async def sampl(ayra):
     if color := ayra.pattern_match.group(1).strip():
         img = Image.new("RGB", (200, 100), f"{color}")
@@ -193,7 +193,7 @@ async def sampl(ayra):
 
 
 @ayra_cmd(
-    pattern="blue$",
+    pattern="[Bb]lue$",
 )
 async def ayra(event):
     ureply = await event.get_reply_message()
