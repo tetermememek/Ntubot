@@ -42,7 +42,7 @@ from . import *
 
 
 @ayra_cmd(
-    pattern="[Gg][i][t][h][u][b] (.*)",
+    pattern="[Gg]ithub (.*)",
 )
 async def gitsearch(event):
     usrname = event.pattern_match.group(1).strip()
