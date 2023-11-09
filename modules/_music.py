@@ -453,9 +453,9 @@ async def dl_playlist(chat, from_user, link):
 
 
 async def file_download(event, reply, fast_download=False):
-    thumb = "https://telegra.ph/file/22bb2349da20c7524e4db.mp4"
-    title = reply.file.title or reply.file.name or f"{str(time())}.mp4"
-    file = reply.file.name or f"{str(time())}.mp4"
+    thumb = "https://telegra.ph//file/fc93865e70ab86745c11d.jpg"
+    title = reply.file.title or reply.file.name or f"{str(time())}.jpg"
+    file = reply.file.name or f"{str(time())}.jpg"
     if fast_download:
         dl = await downloader(
             f"/downloads/{file}",
