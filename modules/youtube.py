@@ -125,7 +125,7 @@ async def yt_audio(e):
         file=file_path,
         thumb=thumbnail,
         file_name=title,
-        duration=duration
+        duration=duration,
         supports_streaming=False,
         caption=f'**💡 Informasi** {"Audio"}\n\n**🏷 Nama:** {title}\n**🧭 Durasi:** {duration}\n**👀 Dilihat:** {views}\n**📢 Channel:** {channel}\n**Upload By: {ayra_bot.full_name}**',
         reply_to=e.reply_to_msg_id,
