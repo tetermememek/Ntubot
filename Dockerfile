@@ -1,8 +1,6 @@
 ######## Kynan #######
 
-#FROM kynan1503/naya-userbot:main
-
-FROM python:3.10
+FROM kynan1503/naya-userbot:main
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ffmpeg neofetch apt-utils libmediainfo0v5 \
