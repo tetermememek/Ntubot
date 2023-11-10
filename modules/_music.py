@@ -10,15 +10,15 @@ import os
 from time import time
 from traceback import format_exc
 
-from Ayra import HNDLR, LOGS, asst, udB, vcClient
+from Ayra import HNDLR, LOGS, asst, udB
 from Ayra._misc import owner_and_sudos
 from Ayra._misc._decorators import compile_pattern
 from Ayra.fns.admins import admin_check
 from Ayra.fns.helper import bash, downloader, time_formatter
 from Ayra.fns.ytdl import get_videos_link
 from Ayra.version import __version__ as AyVer
-from pytgcalls import GroupCallFactory
-from pytgcalls.exceptions import GroupCallNotFoundError
+
+
 from telethon import events
 from telethon.errors.rpcerrorlist import (ChatSendMediaForbiddenError,
                                           ParticipantJoinMissingError)
@@ -47,7 +47,7 @@ def VC_AUTHS():
     _vcsudos = udB.get_key("VC_SUDOS") or []
     return [int(a) for a in [*owner_and_sudos(), *_vcsudos]]
 
-
+"""
 class Player:
     def __init__(self, chat, event=None, video=False):
         self._chat = chat
@@ -231,7 +231,7 @@ def vc_asst(dec, **kwargs):
         )
 
     return ult
-
+"""
 
 # --------------------------------------------------
 
