@@ -17,7 +17,7 @@ spinner(){
 
 clone_repo(){
     if [ ! $BRANCH ]
-        then export BRANCH="main"
+        then export BRANCH="beta"
     fi
     if [ -d $DIR ]
         then
