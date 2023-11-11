@@ -20,11 +20,11 @@
         },
         "SESSION": {
             "description": "Silakan isi Telethon Atau Pyrogram V2",
-            "value": ""
+            "required": true
         },
         "MONGO_URI": {
             "description": "Silakan isi Mongo Db/Mongo Url . Jika Build Redis Gagal . Cara ambil nya ketik #tutor di @kynansupport.",
-            "value": "mongodbsrv://"
+            "required": true
         },
         "HEROKU_API": {
             "description": "Isi Coy Jan Dikosongin.",
