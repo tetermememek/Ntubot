@@ -87,6 +87,8 @@ Gunakan bot ini dengan risiko Anda sendiri, dan gunakan userbot ini dengan bijak
 
  • `cd Naya-Userbot`
 
+ • `cp sample.env .env`
+
  • `nano .env`
   - Jika anda menggunakan mongodb maka isi pada .env MONGO_URI tetapi jika anda menggunakan redis maka isi REDIS_URI dan REDIS_PASSWORD
   - isi vars .env API_ID, API_HASH, DAN SESSION
