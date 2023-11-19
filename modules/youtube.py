@@ -28,7 +28,7 @@ def run_sync(func, *args, **kwargs):
     return get_event_loop().run_in_executor(None, partial(func, *args, **kwargs))
 
 
-@ayra_cmd(pattern="[vV][i][d][e][o]( (.*)|$)")
+@ayra_cmd(pattern="^[Vv][Ii][Dd][Ee][Oo]( (.*)|$)")
 async def yt_video(e):
     infomsg = await e.eor("`Processing...`")
     try:
@@ -82,7 +82,7 @@ async def yt_video(e):
             os.remove(files)
 
 
-@ayra_cmd(pattern="[sS]ong( (.*)|$)")
+@ayra_cmd(pattern="^[Ss][Oo][Nn][Gg]( (.*)|$)")
 async def yt_audio(e):
     infomsg = await e.eor("`Processing...`")
     try:
