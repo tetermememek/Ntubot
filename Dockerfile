@@ -1,7 +1,4 @@
-######## Kynan #######
-
-FROM mymasky/masky3:main
-
+FROM python:3.10
 
 COPY installer.sh .
 
