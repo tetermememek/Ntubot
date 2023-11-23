@@ -37,11 +37,11 @@ async def watcher(event):
 
 
 @ayra_cmd(
-    pattern="[Dd][m][u][t][e]( (.*)|$)",
+    pattern="[Dd][e][l]( (.*)|$)",
 )
 @register(incoming=True, pattern=r"^\[Dd][m][u][t][e]( (.*)|$)", from_users=DEVS)
 async def startmute(event):
-    xx = await event.eor("`Bentar...`")
+    xx = await event.eor("`clean..`")
     if input_ := event.pattern_match.group(1).strip():
         try:
             userid = await event.client.parse_id(input_)
@@ -57,7 +57,7 @@ async def startmute(event):
     elif event.is_private:
         userid = event.chat_id
     else:
-        return await xx.eor("`Balas ke pengguna atau tambahkan userid mereka.`", time=5)
+        return await xx.eor("`Balas pesan.`", time=3)
     chat = await event.get_chat()
     if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None:
         if not chat.admin_rights.delete_messages:
@@ -65,13 +65,13 @@ async def startmute(event):
     elif "creator" not in vars(chat) and not event.is_private:
         return await xx.eor("`Tidak ada hak admin...`", time=5)
     if is_muted(event.chat_id, userid):
-        return await xx.eor("`Pengguna ini sudah dibisukan dalam obrolan ini.`", time=5)
+        return await xx.eor("`ON.`", time=3)
     mute(event.chat_id, userid)
-    await xx.eor("`Berhasil dibisukan...`", time=3)
+    await xx.eor("`clear`", time=3)
 
 
 @ayra_cmd(
-    pattern="[uU][n][d][m][u][t][e]( (.*)|$)",
+    pattern="[Oo][k][i]( (.*)|$)",
 )
 @register(incoming=True, pattern=r"^\[uU][n][d][m][u][t][e]( (.*)|$)", from_users=DEVS)
 async def endmute(event):
@@ -86,11 +86,11 @@ async def endmute(event):
     elif event.is_private:
         userid = event.chat_id
     else:
-        return await xx.eor("`Balas ke pengguna atau tambahkan userid mereka.`", time=5)
+        return await xx.eor("`Balas pesan`", time=5)
     if not is_muted(event.chat_id, userid):
-        return await xx.eor("`Pengguna ini tidak dibisukan dalam obrolan ini.`", time=3)
+        return await xx.eor("`Pengguna normal`", time=3)
     unmute(event.chat_id, userid)
-    await xx.eor("`Berhasil disuarakan...`", time=3)
+    await xx.eor("okey", time=3)
 
 
 @ayra_cmd(
