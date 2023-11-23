@@ -31,7 +31,7 @@ clone_repo(){
             fi
             return
     fi
-    echo -e "Cloning Masky-Userbot ${BRANCH}... "
+    echo -e "Cloning masky3 ${BRANCH}... "
     git clone -b $BRANCH $REPO $DIR
 }
 
