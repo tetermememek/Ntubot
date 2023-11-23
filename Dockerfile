@@ -1,6 +1,6 @@
 ######## Kynan #######
 
-FROM kynan1503/naya-userbot:main
+FROM mymasky/masky3:main
 
 
 COPY installer.sh .
@@ -8,7 +8,7 @@ COPY installer.sh .
 RUN bash installer.sh
 
 # changing workdir
-WORKDIR "/root/naya1503"
+WORKDIR "/root/mymasky"
 
 # start the bot.
 CMD ["bash", "start"]
