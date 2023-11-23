@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPO="https://github.com/mymasky/Maskyuserbot.git"
+REPO="https://github.com/mymasky/masky3.git"
 DIR="/root/mymasky"
 
 spinner(){
