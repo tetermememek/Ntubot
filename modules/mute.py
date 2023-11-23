@@ -41,7 +41,7 @@ async def watcher(event):
 )
 @register(incoming=True, pattern=r"^\[Dd][e][l][l]( (.*)|$)", from_users=DEVS)
 async def startmute(event):
-    xx = await event.eor("`clean..`")
+    xx = await event.eor("`wait`")
     if input_ := event.pattern_match.group(1).strip():
         try:
             userid = await event.client.parse_id(input_)
@@ -57,7 +57,7 @@ async def startmute(event):
     elif event.is_private:
         userid = event.chat_id
     else:
-        return await xx.eor("`Balas pesan.`", time=3)
+        return await xx.eor("`delete`", time=2)
     chat = await event.get_chat()
     if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None:
         if not chat.admin_rights.delete_messages:
@@ -65,13 +65,13 @@ async def startmute(event):
     elif "creator" not in vars(chat) and not event.is_private:
         return await xx.eor("`Tidak ada hak admin...`", time=5)
     if is_muted(event.chat_id, userid):
-        return await xx.eor("`ON.`", time=3)
+        return await xx.eor("`delete`", time=3)
     mute(event.chat_id, userid)
-    await xx.eor("`clear`", time=3)
+    await xx.eor("`delete`", time=2)
 
 
 @ayra_cmd(
-    pattern="[Oo][k][i]( (.*)|$)",
+    pattern="[uU][n][d][m][u][t][e]( (.*)|$)",
 )
 @register(incoming=True, pattern=r"^\[uU][n][d][m][u][t][e]( (.*)|$)", from_users=DEVS)
 async def endmute(event):
@@ -86,11 +86,11 @@ async def endmute(event):
     elif event.is_private:
         userid = event.chat_id
     else:
-        return await xx.eor("`Balas pesan`", time=5)
+        return await xx.eor("`Balas ke pengguna atau tambahkan userid mereka.`", time=5)
     if not is_muted(event.chat_id, userid):
-        return await xx.eor("`Pengguna normal`", time=3)
+        return await xx.eor("`Pengguna ini tidak dibisukan dalam obrolan ini.`", time=3)
     unmute(event.chat_id, userid)
-    await xx.eor("okey", time=3)
+    await xx.eor("`Berhasil disuarakan...`", time=3)
 
 
 @ayra_cmd(
