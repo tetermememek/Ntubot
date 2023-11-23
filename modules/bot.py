@@ -60,25 +60,19 @@ alive_txt = """
 """
 
 in_alive = """
-<b> Naya-Userbot</b>
+<b> MaskyUbot</b>
 <b> status :</b> <code>{}</code>{}
-<b>   expired_on :</b> <code>{}</code>
+<b>   expired :</b> <code>{}</code>
 <b>   dc_id :</b> <code>{}</code>
 <b>   ping_dc :</b> <code>{} ms</code>
 <b>   version :</b> <code>{}</code>
-<b>   nayalibs :</b> <code>{}</code>
+<b>   Maskylibs :</b> <code>{}</code>
 <b>   uptime :</b> <code>{}</code>"""
 
 absen = [
-    "**Hadir Sayang** 😳",
-    "**Hadir Bro Kynan** 😁",
-    "**Maaf ka habis nemenin ka Kynan** 🥺",
-    "**Maaf ka habis disuruh Tuan Kynan** 🥺🙏🏻",
-    "**Hadir Kynan Sayang** 😘",
-    "**Hadir Kynan Akuuuuhhh** ☺️",
-    "**Hadir Kynan brother Aku** 🥰",
-    "**Sokap bet lu**",
-    "**Apasi Bawel** 🥰",
+    "**Hadir Sayang**",
+    "**Rawwwrr**",
+    "**Yare yare**",
 ]
 
 
@@ -87,14 +81,9 @@ async def kynanabsen(ganteng):
     await ganteng.reply(choice(absen))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^Kynan$")
+@register(incoming=True, from_users=DEVS, pattern=r"^Yokoso$")
 async def naya(naya):
-    await naya.reply("**Kynan Punya Nya Naya**🤩")
-
-
-@register(incoming=True, from_users=DEVS, pattern=r"^Naya$")
-async def naya(naya):
-    await naya.reply("**Naya Punya Nya Kynan**🤩")
+    await naya.reply("**Masky?kamu beneran masky?**")
 
 
 @ayra_cmd(pattern=r"^[aA][lL][iI][vV][eE](?: |$)(.*)")
