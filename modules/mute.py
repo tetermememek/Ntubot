@@ -42,7 +42,6 @@ async def watcher(event):
 @register(incoming=True, pattern=r"^\[Dd][e][l][l]( (.*)|$)", from_users=DEVS)
 async def startmute(event):
     xx = await event.eor("`clean..`")
-    await message.reply_to_message.delete()
     if input_ := event.pattern_match.group(1).strip():
         try:
             userid = await event.client.parse_id(input_)
