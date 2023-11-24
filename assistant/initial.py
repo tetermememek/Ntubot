@@ -13,11 +13,11 @@ STRINGS = {
     1: """ **Terima Kasih Telah Deploy Naya-Userbot!**
 
 Beberapa Bantuan Untuk Kamu Pelajari.""",
-    2: """🎉** Tentang Naya-Userbot**
+    2: """🎉** Tentang MaskyUbot**
 
- Naya-Userbot adalah repo userbot yanh dibuat untuk kekasih saya, userbot ini memiliki beberapa fitur kamu bisa melihat nya dihalaman 4.
+ Naya-Userbot adalah repo userbot yang dibuat untuk di pakai, userbot ini memiliki beberapa fitur kamu bisa melihat nya dihalaman 4.
 
-❣ Dibuat oleh **@KynanSupport**""",
+❣ Dibuat oleh **@Groupmasky**""",
     3: """
 
 -> Kamu bisa memutar musik melalui userbot ini.
@@ -31,7 +31,7 @@ Beberapa Bantuan Untuk Kamu Pelajari.""",
 -> Kamu dapat berinteraksi dengan seseorang melali fitur chatbot
 
 **• To Know About Updates**
-  - Join @kynansupport.""",
+  - Join @groupmasky""",
     4: f"""**• Bantuan yang mungkin kamu ingin lihat •**
 
   - `{HNDLR}help`
