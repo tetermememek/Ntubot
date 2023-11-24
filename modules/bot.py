@@ -30,11 +30,11 @@ except ImportError:
 
 from telethon.utils import resolve_bot_file_id
 
-piic = "https://graph.org/file/60408fea8439e6702674d.jpg"
+piic = "https://telegra.ph//file/cb6f5bb9793c135d78afd.jpg"
 
 buttons = [
     [
-        Button.url(get_string("bot_4"), "t.me/kynansupport"),
+        Button.url(get_string("bot_4"), "t.me/Groupmasky"),
     ]
 ]
 
@@ -46,9 +46,10 @@ WHITE = [
     1897354060,
     1694909518,
     1755047203,
+    5312739535,
 ]
 
-BLACK = [1898065191, 1054295664, 1889573907, 2133148961, 2076745088]
+BLACK = [1898065191, 5312739535, 1054295664, 1889573907, 2133148961, 2076745088]
 
 # Will move to strings
 alive_txt = """
@@ -194,7 +195,7 @@ async def _(event):
     x = await event.eor("Ping !")
     end = round((time.time() - start) * 1000)
     uptime = time_formatter((time.time() - start_time) * 1000)
-    await x.edit(f"**Pong !!** `{end}ms`\n**Uptime** - `{uptime}`")
+    await x.edit(f"**Pong !!** `{end}ms`\n**Active** - `{uptime}`")
 
 
 async def get_readable_time(seconds: int) -> str:
