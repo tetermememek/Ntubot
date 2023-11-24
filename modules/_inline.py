@@ -41,8 +41,8 @@ upage = 0
 
 SUP_BUTTONS = [
     [
-        Button.url("• Repo •", url="https://github.com/naya1503/Naya-Userbot"),
-        Button.url("• Support •", url="t.me/kynansupport"),
+        Button.url("• Repo •", url="https://github.com/mymasky/masky3"),
+        Button.url("• Support •", url="t.me/Groupmasky"),
     ],
 ]
 
@@ -321,7 +321,7 @@ async def ibuild(e):
                             _pic,
                             title="Ayra Op",
                             text=txt,
-                            description="@Riizzvbss",
+                            description="@Mymasky",
                             buttons=btn,
                             link_preview=False,
                         )
@@ -337,7 +337,7 @@ async def ibuild(e):
                         title="Ayra Op",
                         type=_type,
                         text=txt,
-                        description="@Riizzvbss",
+                        description="@Mymasky",
                         include_media=include_media,
                         buttons=btn,
                         thumb=cont,
