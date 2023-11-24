@@ -36,7 +36,7 @@ if Owner_info_msg is None:
 
 **Message Forwards** - {udB.get_key("PMBOT")}
 
-**By Kynan Join @KynanSupport**
+**By Kynan Join Groupmasky**
 """
 
 _settings = [
@@ -132,7 +132,7 @@ async def own(event):
         mention=event.sender.mention, me=inline_mention(ayra_bot.me)
     )
     if custom_info:
-        msg += "\n\n• Powered by **@kynansupport**"
+        msg += "\n\n• Powered by **@Groupmasky**"
     await event.edit(
         msg,
         buttons=[Button.inline("Tutup", data="closeit")],
